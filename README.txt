@@ -1,8 +1,7 @@
 2022 note: There was a site with documentation accompanying this mod,
 I will see if I can find it and throw that up on Github too.
 
-
-
+2022 note II: While I could not find the actual site (documentation was largely automatically generated if I recall), I did find the examples and they are now hosted here: https://github.com/romland/wurm-cinematics-docs
 
 
 
