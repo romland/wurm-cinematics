@@ -10,6 +10,7 @@ I dug up a few clips from 2018 that was taken during the development of the mod.
 
 [![Example Video](https://img.youtube.com/vi/BVRQpaHasQU/0.jpg)](https://www.youtube.com/watch?v=BVRQpaHasQU "Example Video")
 [![Example Video](https://img.youtube.com/vi/ne2sDgJlBbo/0.jpg)](https://www.youtube.com/watch?v=ne2sDgJlBbo "Example Video")
+[![Example Video](https://img.youtube.com/vi/jrRl3eoWSSc/0.jpg)](https://www.youtube.com/watch?v=jrRl3eoWSSc "Example Video")
 
 
 `Below is the original README file that was distributed with the mod.`
