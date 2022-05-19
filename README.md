@@ -8,7 +8,7 @@ That said, I did find the examples and they are now on GitHub here: https://gith
 ## Example Clips
 I dug up a few clips from 2018 that was taken during the development of the mod...
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/BVRQpaHasQU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Example Video](https://img.youtube.com/vi/BVRQpaHasQU/0.jpg)](https://www.youtube.com/watch?v=BVRQpaHasQU "Example Video")
 
 
 `Below is the original README file that was distributed with the mod.`
