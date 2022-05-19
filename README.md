@@ -6,11 +6,15 @@ sadly it's nowhere to be found.
 That said, I did find the examples and they are now on GitHub here: https://github.com/romland/wurm-cinematics-docs/tree/main/examples and the repository for them is at https://github.com/romland/wurm-cinematics-docs
 
 ## Example Clips
-I dug up a few clips from 2018 that was taken during the development of the mod...
+I dug up a few clips from 2018 that was taken during development...
 
+[![Example Video](https://img.youtube.com/vi/a7q-6sedZuQ/0.jpg)](https://www.youtube.com/watch?v=a7q-6sedZuQ "Example Video")
 [![Example Video](https://img.youtube.com/vi/BVRQpaHasQU/0.jpg)](https://www.youtube.com/watch?v=BVRQpaHasQU "Example Video")
 [![Example Video](https://img.youtube.com/vi/ne2sDgJlBbo/0.jpg)](https://www.youtube.com/watch?v=ne2sDgJlBbo "Example Video")
 [![Example Video](https://img.youtube.com/vi/jrRl3eoWSSc/0.jpg)](https://www.youtube.com/watch?v=jrRl3eoWSSc "Example Video")
+[![Example Video](https://img.youtube.com/vi/5C4oKmglCbY/0.jpg)](https://www.youtube.com/watch?v=5C4oKmglCbY "Example Video")
+
+
 
 
 `Below is the original README file that was distributed with the mod.`
