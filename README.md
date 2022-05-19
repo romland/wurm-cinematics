@@ -1,4 +1,5 @@
 # Friya's Cinematics
+A client-side for Wurm Unlimited that assist you in making better looking video content.
 
 This is a few years after that fact and I recall there being a site with documentation accompanying this mod,
 sadly it's nowhere to be found.
