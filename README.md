@@ -2,7 +2,7 @@
 A client-side mod for Wurm Unlimited that assist you in making better looking video content.
 
 This is a few years after that fact and I recall there being a site with documentation accompanying this mod,
-sadly it's nowhere to be found.
+~~sadly it's nowhere to be found~~ [here](https://github.com/romland/wurm-cinematics-site).
 
 That said, I did find the examples and they are now on GitHub here: https://github.com/romland/wurm-cinematics-docs/tree/main/examples and the repository for them is at https://github.com/romland/wurm-cinematics-docs
 
