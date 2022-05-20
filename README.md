@@ -21,7 +21,7 @@ I dug up a few clips from 2018 that was taken during development...
 
 `Below is the original README file that was distributed with the mod.`
 
-[There is even a logo](https://raw.githubusercontent.com/romland/wurm-cinematics-site/main/image/logo.png)
+![There is even a logo](https://raw.githubusercontent.com/romland/wurm-cinematics-site/main/image/logo.png)
 
 # Introduction
 
