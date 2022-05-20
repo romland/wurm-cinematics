@@ -19,9 +19,9 @@ I dug up a few clips from 2018 that was taken during development...
 [![Example Video](https://img.youtube.com/vi/5C4oKmglCbY/0.jpg)](https://www.youtube.com/watch?v=5C4oKmglCbY "Example Video")
 
 
-
-
 `Below is the original README file that was distributed with the mod.`
+
+[![There is even a logo](https://raw.githubusercontent.com/romland/wurm-cinematics-site/main/image/logo.png)]
 
 # Introduction
 
