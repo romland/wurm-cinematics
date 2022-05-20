@@ -4,8 +4,8 @@ A client-side mod for Wurm Unlimited that assist you in making better looking vi
 This is a few years after that fact and I recall there being a site with documentation accompanying this mod,
 ~~sadly it's nowhere to be found~~ it can now be found [here](https://github.com/romland/wurm-cinematics-site).
 
-Examples are on GitHub [here](https://github.com/romland/wurm-cinematics-docs/tree/main/examples)
-Repository the examples and templates are [here](https://github.com/romland/wurm-cinematics-docs)
+Examples are on GitHub [here](https://github.com/romland/wurm-cinematics-docs/tree/main/examples), 
+its repository (together with templates) are [here](https://github.com/romland/wurm-cinematics-docs)
 
 *Note: I do not know whether this mod works on latest version of Wurm Unlimited. In general, though, pretty small patches are needed for upgrades.*
 
