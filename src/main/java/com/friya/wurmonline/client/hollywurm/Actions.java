@@ -438,7 +438,7 @@ public class Actions
 
 		WurmHelpers.tellCinematics("Opening \"" + currentLoadedScript + "\" in editor. Any modifications to it will immediately take effect.", MessageType.IMPORTANT);
 		try {
-			java.awt.Desktop.getDesktop().edit(IO.getFile(currentLoadedScript));
+			Desktop.getDesktop().edit(IO.getFile(currentLoadedScript));
 			
 		} catch (IOException e) {
 			logger.log(Level.SEVERE, "failed to open file for editing: " + e.toString(), e);

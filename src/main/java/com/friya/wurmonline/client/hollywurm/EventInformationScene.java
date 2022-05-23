@@ -14,7 +14,7 @@ import com.wurmonline.math.Vector3f;
 
 class EventInformationScene
 {
-	private static Logger logger = Logger.getLogger(EventInformationScene.class.getName());
+	private static final Logger logger = Logger.getLogger(EventInformationScene.class.getName());
 
 	PointOfInterest poi;
 	SceneDesigner designer;

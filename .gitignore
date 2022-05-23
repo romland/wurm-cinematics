@@ -1,1 +1,10 @@
-bin
+/bin
+/out
+/build
+/run
+/.idea
+/eclipse
+/.gradle
+/*.iml
+/*.ipr
+/libs

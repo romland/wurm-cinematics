@@ -1,0 +1,45 @@
+plugins {
+    id 'java'
+}
+
+apply plugin:'java'
+
+group 'friya.wurmonline.client'
+version '1.1'
+
+repositories {
+    mavenCentral()
+    flatDir {
+        dirs "I:\\SteamLibrary\\steamapps\\common\\Wurm Unlimited\\WurmLauncher"
+    }
+}
+
+dependencies {
+    implementation 'javazoom:jlayer:1.0.1'
+    implementation 'com.google.code.gson:gson:2.9.0'
+    implementation 'org.gotti.wurmunlimited:modlauncher'
+    implementation 'org.gotti.wurmunlimited:client'
+    implementation 'org.gotti.wurmunlimited:common'
+}
+
+jar {
+    archiveClassifier = ''
+
+    from sourceSets.main.output
+
+    dependsOn configurations.runtimeClasspath
+    from {
+        configurations.runtimeClasspath.findAll { it.name.startsWith('gson-') || it.name.startsWith('jl') }.collect { zipTree(it) }
+    }
+}
+
+task dist(type: Zip) {
+    into("mods", {
+        into(project.name, {
+            from jar
+        })
+        from fileTree(dir: 'mods', include: '*')
+    })
+
+    archiveName "${project.name}-${project.version}.zip"
+}
