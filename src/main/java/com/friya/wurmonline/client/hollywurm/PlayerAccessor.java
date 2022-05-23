@@ -71,10 +71,6 @@ public class PlayerAccessor implements TweenAccessor<PlayerObj>
 				return 3;
 
 			case TransformTypes.FOCUS_XY:
-/*
-				returnValues[0] = SceneRunner.focusPoint.getX();
-				returnValues[1] = SceneRunner.focusPoint.getY();
-*/
 				if(meta.focusPoint == null) {
 					meta.focusPoint = initFocusPoint();
 				}
@@ -83,11 +79,6 @@ public class PlayerAccessor implements TweenAccessor<PlayerObj>
 				return 2;
 
 			case TransformTypes.FOCUS_XYH:
-/*
-				returnValues[0] = SceneRunner.focusPoint.getX();
-				returnValues[1] = SceneRunner.focusPoint.getY();
-				returnValues[2] = SceneRunner.focusPoint.getH();
-*/
 				if(meta.focusPoint == null) {
 					meta.focusPoint = initFocusPoint();
 				}
@@ -96,19 +87,6 @@ public class PlayerAccessor implements TweenAccessor<PlayerObj>
 				returnValues[2] = meta.focusPoint.getH();
 				return 3;
 
-/*
-			case TransformTypes.FOCUS_XYH:
-				returnValues[0] = getXrot(target);
-				returnValues[1] = getYrot(target);
-				return 2;
-*/
-/*
-			case TransformTypes.FOCUS_XYH:
-				pos = target.getPos();
-				returnValues[0] = getXYAngle(pos, SceneRunner.focusPoint);
-				returnValues[1] = getZAngle(pos, SceneRunner.focusPoint);
-				return 2;
-*/
 			case TransformTypes.FOLLOW_FOCUS :
 				if(meta.focusPoint == null) {
 					meta.focusPoint = initFocusPoint();
@@ -132,17 +110,6 @@ public class PlayerAccessor implements TweenAccessor<PlayerObj>
 
 				returnValues[0] = meta.followPoint.getCoordinateType().getValue();
 				returnValues[1] = meta.followPoint.getShortTargetId();
-
-/*
-				returnValues[2] = pos.getX() - SceneRunner.followPoint.getX();
-				returnValues[3] = pos.getY() - SceneRunner.followPoint.getY();
-				returnValues[4] = pos.getH() - SceneRunner.followPoint.getH();
-*/
-/*
-				returnValues[2] = pos.getX();
-				returnValues[3] = pos.getY();
-				returnValues[4] = pos.getH();
-*/
 
 				returnValues[2] = meta.followPoint.getX();
 				returnValues[3] = meta.followPoint.getY();
@@ -177,19 +144,12 @@ public class PlayerAccessor implements TweenAccessor<PlayerObj>
 			currentFocusPoint.setY(WurmHelpers.getWorld().getPlayerPosY() - xy.y);
 		}
 		return currentFocusPoint;
-/*
-		Vector2f xy = Builder.getPointFromDistAngle(10000, WurmHelpers.getWorld().getPlayerRotX());
-		focusPoint.setX(WurmHelpers.getWorld().getPlayerPosX() + xy.x);
-		focusPoint.setY(WurmHelpers.getWorld().getPlayerPosY() + xy.y);
-		logger.info("focusPoint: " + focusPoint.getX() + " " + focusPoint.getY());
-*/
 	}
 	
 	public void setValues(Tween tween, PlayerObj target, int tweenType, float[] newValues)
 	{
 		switch (tweenType ) {
 			case TransformTypes.ROT_X:
-				//target.setX(newValues[0]);
 				setXrot(target, newValues[0]);
 				break;
 			case TransformTypes.ROT_Y:
@@ -197,18 +157,13 @@ public class PlayerAccessor implements TweenAccessor<PlayerObj>
 				break;
 			case TransformTypes.ROT_XY:
 				setXYrot(target, newValues[0], newValues[1]);
-				//setXrot(target, newValues[0]);
-				//setYrot(target, newValues[1]);
-				//target.turn((int)newValues[0], (int)newValues[1], true);
 				break;
 			
 			case TransformTypes.MOVE_XY:
-				//logger.info("setXYH: " + newValues[0] + ", " + newValues[1] + ", " + newValues[2]);
 				setXYPos(target, newValues[0], newValues[1]);
 				break;
 
 			case TransformTypes.MOVE_XYH:
-				//logger.info("setXYH: " + newValues[0] + ", " + newValues[1] + ", " + newValues[2]);
 				setXYHPos(tween, target, newValues[0], newValues[1], newValues[2]);
 				break;
 
@@ -217,14 +172,9 @@ public class PlayerAccessor implements TweenAccessor<PlayerObj>
 				break;
 				
 			case TransformTypes.FOCUS_XY:
-				//logger.info("setXYH: " + newValues[0] + ", " + newValues[1] + ", " + newValues[2]);
 				setXYFocus(tween, target, newValues[0], newValues[1]);
 				break;
-/*
-			case TransformTypes.FOCUS_XYH:
-				setXYHFocus(target, newValues[0], newValues[1], newValues[2]);
-				break;
-*/
+
 			case TransformTypes.FOCUS_XYH:
 				setXYHFocus(tween, target, newValues[0], newValues[1], newValues[2]);
 				break;
@@ -254,9 +204,7 @@ public class PlayerAccessor implements TweenAccessor<PlayerObj>
 
 	private void faceForward(Tween tween, PlayerObj t, float x, float y, float h)
 	{
-		
 		// TODO: This is slow as a motherfucker, rewrite and refactor (use temp vectors, or simply don't use vectors)
-
 		TweenMeta meta = ((TweenMeta)tween.getUserData());
 		
 		x = meta.focusPoint.getX();
@@ -270,7 +218,6 @@ public class PlayerAccessor implements TweenAccessor<PlayerObj>
 		float dist = new Vector3f(x, y, h).distance(new Vector3f(WurmHelpers.getWorld().getPlayerPosX(), WurmHelpers.getWorld().getPlayerPosY(), WurmHelpers.getWorld().getPlayerPosH()));
 
 		if(dist > 0.01) {
-//			logger.info("vel angle: " + angleXY + " move dist: " + dist + " rot: " + WurmHelpers.getWorld().getPlayerRotX());
 			double xy = WurmHelpers.getWorld().getPlayerRotX() + ((((((angleXY - WurmHelpers.getWorld().getPlayerRotX()) % 360) + 540) % 360) - 180) * lerp * deltaTime);
 			
 			if(Math.abs(xy - WurmHelpers.getWorld().getPlayerRotX()) < 5) {
@@ -289,6 +236,8 @@ public class PlayerAccessor implements TweenAccessor<PlayerObj>
 	 * - what we get passed in here is the offset from the target,
 	 * - I think: the move of source (player) to the moving target (creature) is something that should be handled outside of the tween (with a lerp)
 	 * - this means ... we just have a semi-fixed speed for covering distance, and another one to pan around target to the right 'near' position
+	 *
+	 * Follow does not look great yet. In fact, I think this is where I stopped development.
 	 */
 	private void setXYHFollowPos(Tween tween, PlayerObj t, int coordType, int shortCreatureId, float x, float y, float h)
 	{
@@ -372,8 +321,6 @@ public class PlayerAccessor implements TweenAccessor<PlayerObj>
 
 	private void setFollowFocus(Tween tween, PlayerObj t, int coordType, int shortCreatureId, float x, float y, float h)
 	{
-		//logger.info("TODO test18: setFollowFocus(): ");
-		//logger.info("\tx: " + x + " y: " + y + " h: " + h);
 		TweenMeta meta = ((TweenMeta)tween.getUserData());
 
 		TweenPosition targetCreaturePos = WurmHelpers.getCreaturePosition(SceneRunner.getInstance().getShortCreatureId(shortCreatureId));
@@ -393,9 +340,8 @@ public class PlayerAccessor implements TweenAccessor<PlayerObj>
 
 		float lerp = 0.25f;
 		float deltaTime = 0.2f;		// TODO
-//		ORG: float xy = WurmHelpers.getWorld().getPlayerRotX() + ((angleXY - WurmHelpers.getWorld().getPlayerRotX()) * lerp * deltaTime);
-		
-		// https://stackoverflow.com/questions/2708476/rotation-interpolation?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
+
+		// whoa
 	    double xy = WurmHelpers.getWorld().getPlayerRotX() + ((((((angleXY - WurmHelpers.getWorld().getPlayerRotX()) % 360) + 540) % 360) - 180) * lerp * deltaTime);
 
 	    // TODO: Need same lerping for this:
@@ -459,44 +405,9 @@ public class PlayerAccessor implements TweenAccessor<PlayerObj>
 	
 	private void setXYHPos(Tween tween, PlayerObj t, float x, float y, float h)
 	{
-		/*
-		//logger.info("moveTo: " + x + " " + y + " " + h);
-		float deltaX = Math.abs((float)getInstanceValue(t, "xPosUsed") - x);
-		float deltaY = Math.abs((float)getInstanceValue(t, "yPosUsed") - y);
-		float deltaH = Math.abs((float)getInstanceValue(t, "hPosUsed") - h);
-		float th = 0.05f;
-		if(deltaX > th || deltaY > th) { // || deltaH > th) {
-			logger.info("deltas: " + deltaX + " " + deltaY + " " + deltaH);
-		}
-		*/
-/*
-		if((float)getInstanceValue(t, "xPosUsed") != ourLastSet[0]
-			|| (float)getInstanceValue(t, "yPosUsed") != ourLastSet[1]
-			|| (float)getInstanceValue(t, "hPosUsed") != ourLastSet[2]
-			) {
-			logger.info("  pos is: " + (float)getInstanceValue(t, "xPosUsed") + " " + (float)getInstanceValue(t, "yPosUsed") + " " + (float)getInstanceValue(t, "hPosUsed"));
-			logger.info("expected: " + ourLastSet[0] + " " + ourLastSet[1] + " " + ourLastSet[2]);
-		}
-*/		
 		setInstanceValue(t, "xPosUsed", x);
 		setInstanceValue(t, "yPosUsed", y);
 		setInstanceValue(t, "hPosUsed", h);
-
-//		logger.info("setXYHPos: " + tween);
-		/*
-		ourLastSet[0] = (float)getInstanceValue(t, "xPosUsed");
-		ourLastSet[1] = (float)getInstanceValue(t, "yPosUsed");
-		ourLastSet[2] = (float)getInstanceValue(t, "hPosUsed");
-		*/
-/*
-		ourLastSet[0] = x;
-		ourLastSet[1] = y;
-		ourLastSet[2] = h;
-*/		
-		
-		// Uncomment to plot a graph of move at https://plot.ly/create/#/
-		// use replace pattern in notepad++: \[(.+)\] INFO com.friya.wurmonline.client.hollywurm.PlayerAccessor: 
-		//logger.info(ourLastSet[0] + "\t" + ourLastSet[1] + "\t" + ourLastSet[2]);
 	}
 	
 	private void setXYFocus(Tween tween, PlayerObj player, float x, float y)
@@ -509,97 +420,24 @@ public class PlayerAccessor implements TweenAccessor<PlayerObj>
 		meta.focusPoint.setX(x);
 		meta.focusPoint.setY(y);
 	}
-/*
-	// this is just wrong, why it almost works, I have no idea!
-	void setXYHFocus(PlayerObj player, float x, float y, float h)
-	{
-		logger.info("x: " + x + " y: " + y + " h: " + h);
-		SceneRunner.focusPoint.setX(x);
-		SceneRunner.focusPoint.setY(y);
-		SceneRunner.focusPoint.setH(h);
-		
-		float angle = getXYAngle(player.getPos(), SceneRunner.focusPoint);
-		setXrot(player, angle);
-		
-		angle = getZAngle(player.getPos(), SceneRunner.focusPoint);
-		setYrot(player, angle);
-	}
-*/
+
 	private void setXYHFocus(Tween tween, PlayerObj player, float x, float y, float h)
 	{
-//		logger.info("x: " + x + " y: " + y + " -- " + SceneRunner.focusPoint.getX() + " " + SceneRunner.focusPoint.getY() + " " + SceneRunner.focusPoint.getH() + " ");
 		TweenMeta meta = ((TweenMeta)tween.getUserData());
-/*
-		// We are looking too close to our position, increase distance in the same direction...
-		float dist = new Vector3f(x, y, h).distance(new Vector3f(WurmHelpers.getWorld().getPlayerPosX(), WurmHelpers.getWorld().getPlayerPosY(), WurmHelpers.getWorld().getPlayerPosH()));
-		if(dist < 0.1f) {
-			logger.info("close");
-			Vector2f xy = ScriptBuilder.getPointFromDistAngle(10000, WurmHelpers.getWorld().getPlayerRotY());
-			meta.focusPoint.x = (WurmHelpers.getWorld().getPlayerPosX() - xy.x);
-			meta.focusPoint.y = (WurmHelpers.getWorld().getPlayerPosY() - xy.y);
-		}
-*/		
+
 		double angleXY = getXYAngle(player.getPos(), meta.focusPoint);
 		double angleUP = getZAngle(player.getPos(), meta.focusPoint);
-/*
-		float lerp = 0.25f;
-		float deltaTime = 1f;		// TODO
-		double xy = WurmHelpers.getWorld().getPlayerRotX() + ((((((angleXY - WurmHelpers.getWorld().getPlayerRotX()) % 360) + 540) % 360) - 180) * lerp * deltaTime);
-		double up = WurmHelpers.getWorld().getPlayerRotY() + ((angleUP - WurmHelpers.getWorld().getPlayerRotY()) * lerp * deltaTime);
-		setXrot(player, (float)xy);
-		setYrot(player, (float)up);
-*/
 
 		float dist = new Vector3f(x, y, h).distance(new Vector3f(WurmHelpers.getWorld().getPlayerPosX(), WurmHelpers.getWorld().getPlayerPosY(), WurmHelpers.getWorld().getPlayerPosH()));
 		if(Mod.closeByFocusFix && dist < 0.2f && (Math.abs(getXYAngle(player.getPos(), meta.focusPoint) - getXrot(player)) > 2 || Math.abs(getZAngle(player.getPos(), meta.focusPoint) - getYrot(player)) > 2)) {
 			return;
-/*
-			float lerp = 0.001f;
-			float deltaTime = 1f;		// TODO
-			angleXY = WurmHelpers.getWorld().getPlayerRotX() + ((((((angleXY - WurmHelpers.getWorld().getPlayerRotX()) % 360) + 540) % 360) - 180) * lerp * deltaTime);
-			angleUP = WurmHelpers.getWorld().getPlayerRotY() + ((angleUP - WurmHelpers.getWorld().getPlayerRotY()) * lerp * deltaTime);
-			setXrot(player, (float)angleXY);
-			setYrot(player, (float)angleUP);
-*/
-/*
-			x = (player.getPos().getX() - x) * 30f;
-			y = (player.getPos().getY() - y) * 30f;
-			h = (player.getPos().getH() - h) * 30f;
-			meta.focusPoint.setX(x);
-			meta.focusPoint.setY(y);
-			meta.focusPoint.setH(h);
-*/
-/*
-			angleUP = getZAngle(player.getPos(), meta.focusPoint);
-			Vector2f xy = ScriptBuilder.getPointFromDistAngle(10000, (float)angleUP);
-			meta.focusPoint.setX(WurmHelpers.getWorld().getPlayerPosX() - xy.x);
-			meta.focusPoint.setY(WurmHelpers.getWorld().getPlayerPosY() - xy.y);
-			x = meta.focusPoint.x;
-			y = meta.focusPoint.y;
-*/			
-/*
-			logger.info("close focus - " + getXYAngle(player.getPos(), meta.focusPoint) + " " + getZAngle(player.getPos(), meta.focusPoint) + " from " + player.getPos().getX() + " " + player.getPos().getY() + " " + player.getPos().getH() + " looking at " + meta.focusPoint);
-			double deltaXrot = Math.abs(getXYAngle(player.getPos(), meta.focusPoint) - getXrot(player));
-			double deltaYrot = Math.abs(getZAngle(player.getPos(), meta.focusPoint) - getYrot(player));
-			if(deltaXrot > 3 || deltaYrot > 3) {
-				return;
-			}
-*/
 		}
 		
-		//setXYrot(player, (float)(Math.round(angleXY * 10.0) / 10.0), (float)(Math.round(angleUP * 10.0) / 10.0));
 		setXYrot(player, (float)angleXY, (float)angleUP);
-		//setXrot(player, (float)angleXY);
-		//setYrot(player, (float)angleUP);
 
 		meta.focusPoint.setX(x);
 		meta.focusPoint.setY(y);
 		meta.focusPoint.setH(h);
-
-		//logger.info("TESTING HERE, MULTIPLYING DELTA to see if focus jitter disappears");
-//		logger.info("focusOnDegree: " + angleXY + " " + angleUP + " (" + meta.focusPoint + " vs my pos: " + player.getPos().getX() + " " + player.getPos().getY() + " " + player.getPos().getH() + ")");
-
-//		logger.info("setXYHFocus: " + tween);
 	}
 	
 	private double getZAngle(PlayerPosition source, TweenPosition destination)
@@ -607,7 +445,6 @@ public class PlayerAccessor implements TweenAccessor<PlayerObj>
 	    double deltaX = source.getX() - destination.getX();
 	    double deltaY = source.getY() - destination.getY();
 	    double deltaZ = source.getH() - destination.getH();
-	    //return (float)Math.asin(deltaZ / Math.sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ));
 	    double angle = Math.asin(deltaZ / Math.sqrt(deltaX * deltaX + deltaY * deltaY + deltaZ * deltaZ));
 
 	    return Math.toDegrees(angle);
@@ -620,28 +457,9 @@ public class PlayerAccessor implements TweenAccessor<PlayerObj>
 
 	private double getXYAngle(double srcX, double srcY, double dstX, double dstY)
 	{
-		// calculate the angle theta from the deltaY and deltaX values
-		// (atan2 returns radians values from [-PI,PI])
-		// 0 currently points EAST.
-		// NOTE: By preserving Y and X param order to atan2, we are expecting
-		// a CLOCKWISE angle direction.
 		double theta = Math.atan2(dstY - srcY, dstX - srcX);
-
-		// rotate the theta angle clockwise by 90 degrees
-		// (this makes 0 point NORTH)
-		// NOTE: adding to an angle rotates it clockwise.
-		// subtracting would rotate it counter-clockwise
 		theta += Math.PI / 2.0;
-
-		// convert from radians to degrees
-		// this will give you an angle from [0->270],[-180,0]
 		double angle = Math.toDegrees(theta);
-
-		// convert to positive range [0-360)
-		// since we want to prevent negative angles, adjust them now.
-		// we can assume that atan2 will not return a negative value
-		// greater than one partial rotation
-
 		if (angle < 0) {
 			angle += 360;
 		}
@@ -649,51 +467,6 @@ public class PlayerAccessor implements TweenAccessor<PlayerObj>
 		return (double) angle;
 	}
 
-/*
-	float getXYAngle(PlayerPosition source, TweenPosition destination)
-	{
-		// calculate the angle theta from the deltaY and deltaX values
-		// (atan2 returns radians values from [-PI,PI])
-		// 0 currently points EAST.
-		// NOTE: By preserving Y and X param order to atan2, we are expecting
-		// a CLOCKWISE angle direction.
-		double theta = Math.atan2(destination.getY() - source.getY(), destination.getX() - source.getX());
-
-		// rotate the theta angle clockwise by 90 degrees
-		// (this makes 0 point NORTH)
-		// NOTE: adding to an angle rotates it clockwise.
-		// subtracting would rotate it counter-clockwise
-		theta += Math.PI / 2.0;
-
-		// convert from radians to degrees
-		// this will give you an angle from [0->270],[-180,0]
-		double angle = Math.toDegrees(theta);
-
-		// convert to positive range [0-360)
-		// since we want to prevent negative angles, adjust them now.
-		// we can assume that atan2 will not return a negative value
-		// greater than one partial rotation
-
-		if (angle < 0) {
-			angle += 360;
-		}
-		
-		return (float) angle;
-	}
-	
- */
-	/**
-	 * Used to keep the focus fixed on a position.
-	 * 
-	 * @param destination
-	 * @return
-	 * /
-	private float[] getXYHAnglesFromPlayer(TweenPosition destination)
-	{
-		return new float[]{ getXYAngle(CellRenderable.world.getPlayer().getPos(), destination), getZAngle(CellRenderable.world.getPlayer().getPos(), destination) };
-	}
-	*/
-	
 	/**
 	 * Returns an object containing the value of any field of an object instance (even private).
 	 * 

@@ -15,8 +15,7 @@ public class ServerEventHandler implements ScriptEventListener
 	private static Logger logger = Logger.getLogger(ServerEventHandler.class.getName());
 
 	private ArrayList<EventInformation> queuedEvents = new ArrayList<EventInformation>();
-//	private ArrayList<EventInformation> idlingEvents = new ArrayList<EventInformation>();
-	
+
 	// Typically only one "event" is in at queuedScenes at any given point. Once an event made it in here, it is removed from queuedEvents.
 	private LinkedList<EventInformationScene> queuedScenes = new LinkedList<EventInformationScene>();
 	private LinkedList<EventInformationScene> idlingScenes = new LinkedList<EventInformationScene>();
@@ -28,65 +27,6 @@ public class ServerEventHandler implements ScriptEventListener
 	private static Timer timer;
 	private static final long tickFrequency = 1000;
 	private static boolean ticking;
-
-	/*
-	 * in the case of a "existing uniques event":
-	 * 		they move
-	 * 		but we want them as an idle event -- so they SHOULD be purged -- but not after having been ran just once
-	 * 		do we always keep events around until they expire perhaps?
-	 *  
-	 *  
-	 */
-	
-	// TODO: make sure to check an incoming event if we have any repeatable scenes or something without expiry (they might theoretically be purged before we get to them)
-
-	// TODO: Basic show off deed -- locate some nice objects/buildings on deed and set those to OOIs
-	
-	// have more effects than just fade when switching long-distance scenes (fade to white, zoom into a Wurm logo then to brownish, ...) with a sound effect if no sounds are playing
-	
-	// TODO: need to calculate how much time we should spend on multiple waypoints (when going to location and between OOIs)
-	
-	// if no new events telling us "new audio", play audio until it's done?
-	
-	// - "completing house" event, calculate the size of it and pan around -- make it count for paste too, for easiness
-
-	// design some default moves (like pan-around low etc)
-	
-	// between objects of interest, we should be able to jump between these randomly, provided they are within 40 tiles of eachother
-	// ability to generate a new tween around an object of interest (but need a few random moves first)
-	
-	// be able to feed in a song with "key moments" which we'll cut scenes at (live music video -- kinda)
-	
-	// unique spawn event
-	// existing uniques event (perfect idle event)
-	
-	/*
-	 * generate tweens manually? 
-	 * or use scene designer?
-	 * or use designed templates?
-	 * 
-	 * TODO Communicator:
-	 * - be able to specify which scene template to use for each scene?
-	 * 
-	 * moves:
-	 * 		- low ground pan-around lookng upwards (4 waypoints around)
-	 *		- only do #goto if we are > 40 tiles away from event -- otherwise generate a tween to cover distance
-	 * 
-	 * - each point-of-interest is a scene
-	 * 		- each scene fades out and in
-	 * 		- if there are waypoints in the POI, use that to get to 'location'
-	 * 		- depending on max-duration, decide how much time is spent getting to destination (via waypoints)
-	 * 		- if minCoord/maxCoord is decided, set up random coordinates within the area (waypoints) and keep focus on the location / objectsOfInterest
-	 * 		- if objects of interest, use random moves around these, but always keep focus on one of them OR the main location -- switch between them
-	 */
-
-	// TODO: If a lot of tree tiles around an OOI, stay low
-	// TODO: Tree avoidance when creating paths
-	
-	// Do we ever want to merge several scenes into one script? Perhaps to get rid of possible gaps?
-	//String script = mergeScenes(true);
-
-	// do we need to do anything when we get notification of scene/script end? Perhaps to minimize gaps? NOTE: We MUST NOT start right away in the event notice, but perhaps call tick() in say, 10-20ms.
 
 	public static ServerEventHandler getInstance()
 	{
@@ -108,7 +48,6 @@ public class ServerEventHandler implements ScriptEventListener
 		// TODO:
 		// do we have a high priority scene in our queue? do we have a current running scene? Has it run its minimum duration?
 		// - cancel it
-		
 		if(queuedEvents.size() > 0 && queuedScenes.size() == 0) {
 			convertEventToScenes(getHighestPriorityEvent());
 			Collections.shuffle(queuedScenes);

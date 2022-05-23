@@ -30,14 +30,9 @@ import aurelienribon.tweenengine.TweenPath;
  */
 public class SceneRunner // because Ceno is drawing blanks... again :(
 {
-	private static Logger logger = Logger.getLogger(SceneRunner.class.getName());
+	private static final Logger logger = Logger.getLogger(SceneRunner.class.getName());
     private static SceneRunner instance;
 	
-	// This is here to keep focus on a location (since we do not have the option to hold this in the PlayerObj)
-	// PlayerAccessor will modify it directly. It should be cleared or set to -something- when a run starts.
-//    static TweenPosition focusPoint;
-//    static TweenPosition followPoint;
-
 	private static boolean sceneRunning = false;
 	private static long setupDoneAt = -1;
 
@@ -63,9 +58,6 @@ public class SceneRunner // because Ceno is drawing blanks... again :(
 		return instance; 
 	}
 	
-	/***
-	 * Does nothing on construct.
-	 */
 	SceneRunner()
 	{
 	}
@@ -103,7 +95,7 @@ public class SceneRunner // because Ceno is drawing blanks... again :(
 			cleanUp();
 			
 			if(wantHiddenHud) {
-				// Not sure if I want this here, but it was somewhat confusing to not get any feedback when failign to start a scene.
+				// Not sure if I want this here, but it was somewhat confusing to not get any feedback when failing to start a scene.
 				ScriptRunner.showUI();
 			}
 			
@@ -138,10 +130,6 @@ public class SceneRunner // because Ceno is drawing blanks... again :(
 		setupPaused = false;
 		remainingSetupActions.clear();
 		
-		// Needs to be reset at every run
-//		focusPoint = new TweenPosition();
-//		followPoint = new TweenPosition();
-
 		shortCreatureIds.clear();
 	}
 	
@@ -252,12 +240,6 @@ public class SceneRunner // because Ceno is drawing blanks... again :(
 					setupPaused = true;
 					remainingSetupActions = new ArrayList<String[]>(setupData.subList(i + 1, setupData.size()));
 					long duration = ScriptBuilder.getDurationInMillis(act[1]);
-
-					/*
-					for(String[] ss : remainingSetupActions) {
-						logger.info("upcoming after delay of " + duration + "ms: " + Arrays.toString(ss));
-					}
-					*/
 
 					EventContinueRunning ev = new EventContinueRunning(duration, Unit.MILLISECONDS, scene, this);
 					EventDispatcher.add(ev);
@@ -381,14 +363,8 @@ public class SceneRunner // because Ceno is drawing blanks... again :(
 	
 	private boolean createTween(ValidatedTween validTween, List<Tween> sceneTweens)
 	{
-		//whoop can do this now! FINALLY!
-
-		//logger.info("SceneRunner.runTween() called");
-		
 		List<String[]> tweenData = validTween.getData();
 
-//		logger.info(tweenData.toString());
-		
 		if(tweenData.isEmpty() || tweenData.get(0).length == 0 || (tweenData.get(0)[0].equals("/camera") == false && tweenData.get(0)[0].equals("/world") == false)) {
 			lastError = "invalid command, empty block or missing argument";
 			return false;
@@ -511,7 +487,8 @@ public class SceneRunner // because Ceno is drawing blanks... again :(
 	private boolean addTweenMethod(Tween tween, String cameraType, int transformType, int numWaypointArgs, String[] args)
 	{
 		//
-		// NOTE FOR FUTURE: When adding new methods to tweens, add to Builder.blocks under the entry for "/camera" -- then there should be enough hints on how to go on...
+		// NOTE FOR FUTURE: When adding new methods to tweens, add to Builder.blocks under the entry
+		// for "/camera" -- then there should be enough hints on how to go on adding the method...
 		//
 		
 		switch(args[0]) {
@@ -667,9 +644,7 @@ public class SceneRunner // because Ceno is drawing blanks... again :(
 				meta.setCoordinateType(coordType);
 
 				// We want to "animate" in seconds. Would be nice if we could both get and set in seconds.
-				
-				// WeatherControls.this.world.setWurmTimeOffsetFromTime
-				
+
 				long seconds = (Integer.parseInt(args[1]) * 60 * 60) + (Integer.parseInt(args[1]) * 60);
 				
 				if(!Mod.EARLY_TESTING) {
@@ -737,21 +712,12 @@ public class SceneRunner // because Ceno is drawing blanks... again :(
 				}
 				meta.setCoordinateType(coordType);
 				
-				//tp.setTargetObjectId(targetCreatureId);
-
 				// We want to convert FROM tilex/y and height-in-dirts TO position and meters
-				/*
-				x = ((int)tp.x * 4) + 2;
-				y = ((int)tp.y * 4) + 2;
-				h = (tp.h / 10);
-				*/
 				x = (tp.x * 4f) + 2f;
 				y = (tp.y * 4f) + 2f;
 				h = (tp.h / 10f);
 
-
 				// creatureId will get truncated since it's passed in as a float
-				
 				if(method.equals("target")) {
 					switch(numWaypointArgs) {
 						case 4:
@@ -785,7 +751,8 @@ public class SceneRunner // because Ceno is drawing blanks... again :(
 					return false;
 				}
 
-				// We want to keep reference, not a copy. This however means that this may turn null at any given point in a tween (or more likely: never move again).
+				// We want to keep reference, not a copy. This however means that this may turn null at any
+				// given point in a tween (or more likely: never move again).
 				//logger.info("TODO: meta.followPoint should be initialized in getValue() -- not when creating the tween!");
 				//meta.followPoint = new TweenPosition();
 				break;
@@ -915,24 +882,14 @@ public class SceneRunner // because Ceno is drawing blanks... again :(
 					coordType = CoordinateType.ABSOLUTE;
 				}
 
-				//logger.info("final coord: " + tp.toString());
-
 				meta.setCoordinateType(coordType);
 
 				// We want to convert FROM tilex/y and height-in-dirts TO position and meters
-				/*
-				// Removed to support fractional positions
-				x = ((int)tp.x * 4) + 2;
-				y = ((int)tp.y * 4) + 2;
-				h = (tp.h / 10);
-				*/
 				x = (tp.x * 4f) + 2f;
 				y = (tp.y * 4f) + 2f;
 				h = (tp.h / 10f);
 
-				//logger.info("setting tween for " + cameraType + "." + method + ": " + x + ", " + y + " h: " + h);
-				
-				// Positions are (tile * 4) + 2 for x and y (positions are more precise than a tile in the game) 
+				// Positions are (tile * 4) + 2 for x and y (positions are more precise than a tile in the game)
 				// Height should be divided by 10 to get it in 'dirts' instead of meters.
 				if(method.equals("target")) {
 					switch(numWaypointArgs) {
@@ -980,33 +937,6 @@ public class SceneRunner // because Ceno is drawing blanks... again :(
 					lastError = "set tween coordinate for " + method + " in " + commandType + ": unknown method \"" + method + "\"";
 					return false;
 				}
-				
-				/*
-				// Focus on "point" should be okay now, I believe?
-				if(focusPoint.isInitialized() == false && (transformType == TransformTypes.FOCUS_XY || transformType == TransformTypes.FOCUS_XYH)) {
-					focusPoint.setX(x);
-					focusPoint.setY(y);
-					focusPoint.setH(h);
-					focusPoint.setInitialized(true);
-				}
-				*/
-				
-				/*
-				if(meta.focusPoint == null || meta.focusPoint.isInitialized() == false) {
-					switch(transformType) {
-						case TransformTypes.FOCUS_XY :
-						case TransformTypes.FOCUS_XYH :
-							meta.focusPoint = new TweenPosition();
-							
-							meta.focusPoint.setX(0);
-							meta.focusPoint.setY(0);
-							meta.focusPoint.setH(0);
-							
-							meta.focusPoint.setInitialized(true);
-							break;
-					}
-				}
-				*/
 				
 				//logger.info("final pos: " + x + " " + y + " " + h);
 				break;
@@ -1167,13 +1097,6 @@ public class SceneRunner // because Ceno is drawing blanks... again :(
 	private boolean setTweenWait(Tween tween, String cameraType, int transformType, int numWaypointArgs, String[] args)
 	{
 		long delayDuration = ScriptBuilder.getDurationInMillis(args[1]);
-
-		/*
-		if(delayDuration > tween.getDuration()) {
-			lastError = "wait delay is longer than entire duration, nothing after the wait would run properly";
-			return false;
-		}
-		*/
 
 		tween.delay(delayDuration);
 		return true;

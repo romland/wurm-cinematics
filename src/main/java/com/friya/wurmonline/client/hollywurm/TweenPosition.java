@@ -48,17 +48,9 @@ public class TweenPosition
 	
 	void add(PlayerPosition other)
 	{
-/*
-		if(convertToTilesDirts) {
-			x += ((int)other.getX() >> 2);
-			y += ((int)other.getY() >> 2);
-			h += ((int)other.getH() * 10);
-		} else {
-*/
-			x += other.getX();
-			y += other.getY();
-			h += other.getH();
-//		}
+		x += other.getX();
+		y += other.getY();
+		h += other.getH();
 	}
 
 	void add(TweenPosition other)
@@ -91,7 +83,7 @@ public class TweenPosition
 
 		return true;
 	}
-// removed %360
+
 	public boolean setRot(String _xRot, String _yRot)
 	{
 		xRot = Float.parseFloat(_xRot);

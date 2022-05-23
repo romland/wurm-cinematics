@@ -55,17 +55,6 @@ public class Paths
 		}
 	}
 
-/*
-	ArrayList<TweenPosition> getCircle(float atHeight, float centerX, float centerY, float radius)
-	{
-		return Circle.getPath(atHeight, centerX, centerY, radius);
-	}
-
-	static ArrayList<TweenPosition> getPanAround(float x, float y, float h, float radius)
-	{
-		return PanAround.getPath(x, y, h, radius);
-	}
-*/
 	MoveType getRandomMove(MoveType[] moves)
 	{
 		return moves[ThreadLocalRandom.current().nextInt(0, moves.length)];

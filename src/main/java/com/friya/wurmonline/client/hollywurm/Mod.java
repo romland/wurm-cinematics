@@ -14,14 +14,6 @@ import org.gotti.wurmunlimited.modloader.interfaces.Initable;
 import org.gotti.wurmunlimited.modloader.interfaces.PreInitable;
 import org.gotti.wurmunlimited.modloader.interfaces.WurmClientMod;
 
-// cd "D:\Program Files (x86)\Steam\steamapps\common\Wurm Unlimited\WurmLauncher"
-// Get-Content .\client.log -wait
-
-
-// /load Friya-Deed-Edgehedge-1491701433098.friyaclip
-
-// spiders: #goto 1230 1661 
-// /loadscript Creature_Spawn_test.txt
 
 public class Mod implements WurmClientMod, Initable, PreInitable, Configurable
 {
@@ -44,9 +36,9 @@ public class Mod implements WurmClientMod, Initable, PreInitable, Configurable
 	public static boolean useHudRendererTick = false;		// Set for testing only (but NOT together with the above)
 	public static boolean useWorldRenderTick = true;		// recommended?
 	
-	// Set to null to not load anything.
-	//static String autoLoadScript = "test38";
+	// Set to null to not pre-load anything.
 	static String autoLoadScript = null;
+	//static String autoLoadScript = "test38";
 	//static String autoLoadScript = "examples/0410 - Synchronizing with music";
 	//static String autoLoadScript = "born-to-be-wild";
 	//static String autoLoadScript = "examples\\0250 - Follow the mosquito.txt";
@@ -59,20 +51,6 @@ public class Mod implements WurmClientMod, Initable, PreInitable, Configurable
 	static HashMap<String, String> softwareUpdateInfo = new HashMap<String, String>();
 	
 	private static Logger logger = Logger.getLogger(Mod.class.getName());
-
-    public enum DearReader {
-        BORROWING("   If you are going to borrow code, at last give some credit to the author. Authors like that. It makes it easier to spend hundreds of hours creating things."),
-        RENAMING("    If you HAVE TO release this code as your own or from your own VCS, at least have the decency to make it clear that it's a fork so I don't have to support your shit, "),
-        LESSONS("     lessons were learned."),
-        IDIOT("       So, on this note (and others over the years) ... that lad called Sindusk on Wurm Forums is a retard. Whatever you are paying your shrink, Sindusk, it's clearly too much."),
-    	NEW_WURM_DEV("Oh. That was a surprise (him becoming Wurm dev). The guy's got a severe lack of integrity, a very hard time telling right from wrong and can only tweak other people's code."
-    			+ " Not to mention that if he lets out a fart, he will make sure *everyone* knows that it smelled like rose petals and was a tremendous scientific breakthrough."),
-        LICENSE("     You may use this program for whatever purpose, provided that the credits and this enum (DearReader) and its contents is present in the program or parts thereof."),
-        ME("                     -- (c)Friya, 2018"),
-        FUTURE("      When I consider this mod finished, I will remove these idiotic license terms."),
-    	EMPTY("       ");
-        private DearReader(String s) {}
-    }
 
 
     @Override
@@ -132,11 +110,13 @@ public class Mod implements WurmClientMod, Initable, PreInitable, Configurable
     	renderOwnBody = Boolean.valueOf(p.getProperty("renderOwnBody", String.valueOf(renderOwnBody))).booleanValue();
     	cinematicsEnabled = Boolean.valueOf(p.getProperty("cinematicsEnabled", String.valueOf(cinematicsEnabled))).booleanValue();
     	acceptServerEvents = Boolean.valueOf(p.getProperty("acceptServerEvents", String.valueOf(acceptServerEvents))).booleanValue();
+
     	if(!usePlayerTick && !useWorldTick && !useHudRendererTick) {
     		useWorldRenderTick = Boolean.valueOf(p.getProperty("useWorldRenderTick", String.valueOf(useWorldRenderTick))).booleanValue();
     	} else {
     		logger.info("Ignoring useWorldRenderTick setting because it's overridden in code. Sorry!");
     	}
+
     	disableWurmRenderers = Boolean.valueOf(p.getProperty("disableWurmRenderers", String.valueOf(disableWurmRenderers))).booleanValue();
     	
     	autoLoadScript = String.valueOf(p.getProperty("autoLoadScript", String.valueOf(autoLoadScript)));
@@ -161,31 +141,44 @@ public class Mod implements WurmClientMod, Initable, PreInitable, Configurable
     	Receiver r = new Receiver();
     	r.handle(IO.load("_spectate-test-01.txt"));
 
+//		if(false) {
+//			PathMaker.getCircle(200f, 1200f, 1200f, 5);
+//		}
 
-//    	PathMaker.getCircle(200f, 1200f, 1200f, 5);
-    	
-//		Testing.f1();
-//    	int x = 1/0;logger.info(""+x);
-    	
-//    	ScriptRunner.startMusic();
-/*
-    	try {
-			Thread.sleep(1000);
-		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+//		if(false) {
+//			Testing.f1();
+//		}
+
+//		if(false) {
+//			ScriptRunner.startMusic();
+//		}
+
+//		if(false) {
+//			try {
+//				Thread.sleep(1000);
+//			} catch (InterruptedException e) {
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//		}
+
+//		if(false) {
+//			outputRemoteWelcomeMessage();
+//		}
+
+//		if(false) {
+//			logger.info(Arrays.toString(IO.dir("examples")));
+//		}
+
+		if(true) {
+			ScriptRunner.run(autoLoadScript);
 		}
-*/
-//    	outputRemoteWelcomeMessage();
-    	
-    	
-//    	logger.info( Arrays.toString(IO.dir("examples")) );
-  
-//    	ScriptRunner.run(autoLoadScript);
-    	
-		//ScriptRunner.runScript("Script_1528054707586");
 
-		// It's an early test, so bail out early as well.
+//		if(false) {
+//			ScriptRunner.runScript("Script_1528054707586");
+//		}
+
+		// It's an early test, we want to bail out early as well. No need to continue.
     	logger.info("Triggering a fatal exception...");
 		int x = 1/0;logger.info(""+x);
 	}
@@ -222,8 +215,6 @@ public class Mod implements WurmClientMod, Initable, PreInitable, Configurable
 			if (file.createNewFile()){
 				logger.info("File is now created -- will not open on launch again.");
 				Desktop.getDesktop().browse(new URI("http://www.filterbubbles.com/wurm-unlimited/cinematics/"));
-			} else {
-				//logger.info("File existed.");
 			}
 		} catch (IOException | URISyntaxException e) {
 			logger.info("Unable to open Cinematics site for the first time");
@@ -238,11 +229,12 @@ public class Mod implements WurmClientMod, Initable, PreInitable, Configurable
 			test();
 		}
 
-    	new UpdateChecker();
-    	openGettingStartedOnFirstLaunch();
+		if(false) {
+			// Disable this since I killed the site. For now.
+			new UpdateChecker();
+			openGettingStartedOnFirstLaunch();
+		}
 
     	WurmHelpers.setupHooks();
-
-    	//logger.info("FORCING DIV BY 0"); int x = 1/0;
 	}
 }

@@ -258,7 +258,6 @@ public class SceneDesigner
 		
 		TweenPosition tp;
 		
-//		for(TweenPosition tp : list) {
 		for(int i = 0; i < list.size(); i++) {
 			if(i == (list.size() - 1)) {
 				break;

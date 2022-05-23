@@ -316,6 +316,8 @@ public class WurmHelpers
 	
 	
 	/**
+	 * This is a partial implementation for attaching text to objects (think: name-plates, which is another mod I never finished)
+	 *
 	 * TODO:
 	 * 		It will render behind stencils (distant trees)
 	 * 		It will not render when behind it
@@ -434,7 +436,8 @@ public class WurmHelpers
 	}
 	
 	/**
-	 * Note! Do not call this in tick() or so, bad idea. Make 'render own body' configurable in the mod, instead. That way we just decide whether to inject or not.
+	 * Note! Do not call this in tick() or so, bad idea. Make 'render own body' configurable in the mod, instead.
+	 * That way we just decide whether to inject or not.
 	 * 
 	 * @return
 	 * @throws NoSuchMethodException
@@ -626,46 +629,15 @@ public class WurmHelpers
 		ClassPool cp = HookManager.getInstance().getClassPool();
         CtClass cls = cp.get("com.wurmonline.client.renderer.gui.HeadsUpDisplay");
         CtMethod met = cls.getDeclaredMethod("showPopupData");
-/*
-        buildSubMenu(
-	        java.util.Map,
-	        java.lang.String,
-	        com.wurmonline.shared.constants.PlayerAction,
-	        int,
-	        boolean
-        ) not found in com.wurmonline.client.renderer.gui.HeadsUpDisplay
-*/
+
         met.insertAfter(
        		  "{ "
-
         		+ "		$1.addSeparator();"
         		+ "		com.wurmonline.shared.constants.PlayerAction[] myActs = com.friya.wurmonline.client.hollywurm.Actions.getActions();"
         		+ "		for(int n = 0; n < myActs.length; n++) {"
         		+ "			$1.addButton(myActs[n], null, $5);"
         		+ "		}"
-
-/*
-        		+ "java.util.Iterator myIt = com.friya.wurmonline.client.hollywurm.Actions.getActionsIterator();	"
-                + "while (myIt.hasNext()) {																				"
-                + "    com.wurmonline.shared.constants.PlayerAction action = (com.wurmonline.shared.constants.PlayerAction)myIt.next();																"
-                + "    com.wurmonline.client.renderer.gui.WurmPopup subMenu = null;																		"
-                + "    if (action.getId() < 0) { 																		"
-                + "        subMenu = this.buildSubMenu($4, action.getName(), myIt, -action.getId(), false);				"
-                + "    }    																							"
-                + "    $1.addButton(action, subMenu, false);														"
-                + "}"
-*/
        		+ "}");
-/*
-Iterator<PlayerAction> myIt = com.friya.wurmonline.client.hollywurm.Actions.getActionsIterator();	
-while (myIt.hasNext()) {																				
-PlayerAction action = myIt.next();																
-WurmPopup subMenu = null;																		
-if (action.getId() < 0) { 																		
-subMenu = this.buildSubMenu($4, action.getName(), myIt, -action.getId(), false);				
-}    									
-rootPopup.addButton(action, subMenu, false);
-*/	
 	}
 	
 	static private void setupPopupDataInterception() throws NotFoundException, CannotCompileException

@@ -3,7 +3,6 @@ package com.friya.wurmonline.client.hollywurm;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.concurrent.ThreadLocalRandom;
 import java.util.logging.Logger;
 
 import com.friya.spectator.communicator.InterestType;

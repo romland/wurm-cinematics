@@ -6,7 +6,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 public class EventDispatcher
 {
-    private static List<EventOnce> events = new CopyOnWriteArrayList<EventOnce>();
+    private static final List<EventOnce> events = new CopyOnWriteArrayList<EventOnce>();
 //    private static Logger logger = Logger.getLogger(EventDispatcher.class.getName());
 
     public EventDispatcher()

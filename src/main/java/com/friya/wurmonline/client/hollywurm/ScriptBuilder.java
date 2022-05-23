@@ -116,8 +116,6 @@ public class ScriptBuilder
 				continue;
 			}
 			
-			//logger.info("Line " + (i + 1) + ": " + Arrays.toString(instr));
-			
 			//
 			// Make sure we have a Scene, and create new scenes as we run into them.
 			//
@@ -422,20 +420,16 @@ public class ScriptBuilder
 			// verify e.g. $$d%
 			String wildcard = args[0].substring(2, 3);
 			String requiredRemainder = args[0].substring(3);
-			//logger.info("wildcard: " + wildcard);
-			//logger.info("requiredRemainder: " + requiredRemainder);
-			
+
 			String actualRemainder = arg.substring(arg.length() - requiredRemainder.length());
-			//logger.info("actualRemainder: " + actualRemainder);
-			
+
 			if(actualRemainder.equals(requiredRemainder) == false) {
 				lastError = arg + " must end with " + requiredRemainder;
 				return false;
 			}
 			
 			String actualArgument = arg.substring(0, arg.length() - actualRemainder.length());
-			//logger.info("actualArgument: " + actualArgument);
-			
+
 			switch(wildcard) {
 				case "d" :
 					if(isNumeric(actualArgument) == false) {
@@ -449,9 +443,6 @@ public class ScriptBuilder
 					lastError = "Invalid wildcard for required argument. This is a bug. Friya is adding something?";
 					return false;
 			}
-
-//			lastError = "Unknown error checking valid arguments for \"" + arg + "\"";
-//			return false;
 		}
 		
 		if(!contains(args, arg)) {
@@ -858,7 +849,6 @@ public class ScriptBuilder
 	
 	
 	
-	// https://stackoverflow.com/questions/42490604/getting-a-point-from-begginning-coordinates-angle-and-distance
 	static Vector2f getPointFromDistAngle(float distance, float angle)
 	{
 		float rads = (float)Math.toRadians(angle);

@@ -2,8 +2,6 @@ package com.friya.wurmonline.client.hollywurm;
 
 /**
  * Stored in a tween when it's created, used to grab meta information about it's source data.
- * 
- * @author J.Romland
  */
 public class TweenMeta 
 {

@@ -21,7 +21,7 @@ import com.wurmonline.shared.constants.PlayerAction;
 
 public class Actions 
 {
-	private static Logger logger = Logger.getLogger(Actions.class.getName());
+	private static final Logger logger = Logger.getLogger(Actions.class.getName());
 	
 	private static SceneDesigner currentSceneDesigner = null;
 	static String currentLoadedScript = null;
@@ -78,18 +78,7 @@ public class Actions
 	static final PlayerAction NewObjectNoteAction = new PlayerAction(NEW_OBJECT_NOTE_ID, 65535, "Add note for object", true);
 	static final PlayerAction NewOrbitAroundAction = new PlayerAction(NEW_ORBIT_AROUND_ID, 65535, "Add orbit point", true);
 	
-	// Test actions.
-	static final PlayerAction TestAction = new PlayerAction(TEST_ID, 65535, "Some Test (cinematics)", true);
-	static final PlayerAction TestAction2 = new PlayerAction(TEST2_ID, 65535, "Some Test 2 (cinematics)", true);
-	static final PlayerAction FollowAction = new PlayerAction(FOLLOW_ID, 65535, "Follow (cinematics)", true);
-	
 
-/*	
-	public static PlayerAction getRootMenu()
-	{
-		return RootMenuAction;
-	}
-*/
 	// public PlayerAction(final short aId, final int aTargetMask, final String aName, final boolean aInstant)
 	public static PlayerAction[] getActions()
 	{
@@ -110,8 +99,6 @@ public class Actions
 				EditScriptAction,
 				DocumentationAction,
 				
-//				TestAction,
-//				TestAction2,
 				// ----------------------------
 				SceneDesignerMenuAction,
 				NewWaypointAction,
@@ -119,7 +106,6 @@ public class Actions
 				NewFocusPointAction,
 				RemoveLastFocuspointAction,
 				NewOrbitAroundAction,
-//				FollowAction,
 				NewTeleportPointAction,
 				NewObjectNoteAction,
 				GetObjectIdAction
@@ -270,7 +256,7 @@ public class Actions
 			//
 			// The idea here is that a script being designed will take precedence over a loaded script. 
 			// HOWEVER: If a script is loaded after something was being designed, that will clear the 
-			// currentSceneDesigner. This should not be a problem, because that should be saved ever
+			// currentSceneDesigner. This should not be a problem, because that should be saved over
 			// time it is changed -- so can always be reloaded at a later point.
 			//
 			// Logical? Didn't think so. We'll see how long it'll be before I rewrite this functionality.
@@ -531,7 +517,6 @@ public class Actions
 					+ "	};null;null;"
 					+ "}";
 
-//		WurmHelpers.getWorld().getHud().showBml((short)id, title, 400, 400, true, true, 100f, 100f, 100f, bml);
 		WurmHelpers.getWorld().getHud().showBml((short)id, title, 400, 400, 0, 0, true, true, 100f, 100f, 100f, bml);
 	}
 	
@@ -727,7 +712,6 @@ public class Actions
 	private static int cmdAddOrbitAround(float height, int tileX, int tileY, int radius) 
 	{
 		int ret = 0;
-		//ArrayList<TweenPosition> tps = Paths.getInstance().getCircle(height, (float)tileX, (float)tileY, radius);
 		PathArgs args = new PathArgs();
 		args.setXYHR(height, (float)tileX, (float)tileY, radius);
 		ArrayList<TweenPosition> tps = Paths.getInstance().getPath(MoveType.CIRCLE, args);
@@ -860,17 +844,10 @@ public class Actions
 	@SuppressWarnings("unused")
 	private static void inGameEditorTest()
 	{
-		//wurmonline/client/console/WurmConsole.java:    public void showBml(final String filename) {
-		//wurmonline/client/console/WurmConsole.java:            this.requireLength(data, 2, "Usage: showbml <filename>");
-		//wurmonline/client/console/WurmConsole.java:            this.world.getHud().showBml(bml);
-		
 		logger.info("editorTest()");
 		
 		// TODO: Make sure return and enter keys work in the bloody form!
-		
-		//String bml = "border{center{text{type='bold';text=\"Inscribing is an irreversible process. Enter your important message here:\"}};null;scroll{vertical=\"true\";horizontal=\"false\";varray{rescale=\"true\";passthrough{id=\"id\";text=\"25\"}input{id=\"answer\";maxchars=\"397\";maxlines=\"-1\";bgcolor=\"200,200,200\";color=\"0,0,0\";text=\"\"}harray {button{text='     Save     ';id='submit'}}}};null;null;}";
-		
-		// Inscribe BML:
+
 		String bml = ""
 				+ "	border{"
 				+ "		center{"
