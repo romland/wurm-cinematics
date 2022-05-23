@@ -59,18 +59,12 @@ I dug up a few clips from 2018 that was taken during development...
 
 
 #   Installing
-   1. Unzip the downloaded zip in your Wurm client's folder (that is not _in_ mods)
-      You should now have gotten a new folder called: ''
+   1. Unzip the downloaded file in your Wurm client's folder (parent folder of mods).
       In your mods folder you should now have:
       - friyas-cinematics (folder)
       - friyas-cinematics.properties
 
-   3. You need to copy (or move) gson-2.8.0.jar, jl.1.0.1.jar and 
-      SpectatorCommunicator.jar to the lib folder of your game. You can find 
-      this folder at the same level as your mods folder. 
-      I.e: Steam\steamapps\common\Wurm Unlimited\WurmLauncher\lib
-
-   4. Start game.
+   2. Start game.
 
 
 #   Keybinds
