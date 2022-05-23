@@ -1,0 +1,38 @@
+#
+# Instead of using a lot of "wait"s or splitting up very minor parts into multiple scenes,
+# you can use the "/at" command to run a few commands simultaneously and have another few
+# commands start at another time.
+#
+# The /at command makes it a lot easier to do synchronized things without having to change
+# dozens of 'wait' instructions.
+#
+# This demonstrates two parts starting at two different times. One 4 seconds in, and the
+# second 14 seconds in.
+#
+/scene start "Example of the /at command"
+	/setup
+		option fade on
+		option benchmarking on
+		option hud off
+		wait 1s
+		option fade off
+
+	/at 4s
+		/camera focus for 10s
+			waypoint +13 +5 +0
+			target +3 +5 +0
+			use easing circ inout
+			use pathing catmull-rom
+		
+		/camera move for 5s
+			waypoint +0 -5 +0
+			target +0 +0 +0
+
+	/at 14s
+		/camera focus for 5s
+			waypoint +13 +5 +0
+			target +3 +5 +0
+			use easing bounce inout
+			use pathing catmull-rom
+			
+/scene end

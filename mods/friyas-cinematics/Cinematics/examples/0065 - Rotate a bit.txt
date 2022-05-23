@@ -1,0 +1,16 @@
+#
+# Let's name this scene, it looks better in the Cinematics tab in-game. I call it "Simple Rotation",
+# and then append that to /scene start.
+#
+/scene start "Simple Rotation"
+	/setup
+		tell console "flight"
+
+	# New type of camera movement here, "rotate". Works just like a "/camera move" but instead
+	# just pans the view.
+	#
+	# We tell it to take 4 seconds to get to the target (+20 degrees in the case below)
+	/camera rotate for 4s
+		# Pan the camera +20 degrees along X, leave Y alone.
+		target +20 +0
+/scene end

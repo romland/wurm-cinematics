@@ -1,0 +1,18 @@
+#
+# You can tell the easing of your movement to do it on the way "in", or "out" or both (inout)...
+#
+/scene start "Easing example: bounce in and out"
+
+	/camera focus for 5s
+		waypoint +100 +0 +0
+		target +0 +100 +0
+
+		# Use the desired easing -- and tell it do to it both in and out...
+		use easing bounce inout
+
+		# If you just want to do it "in", specify "in" like so:
+		# 	use easing bounce in
+		# ...and likewise with out:
+		#	use easing bounce out
+
+/scene end

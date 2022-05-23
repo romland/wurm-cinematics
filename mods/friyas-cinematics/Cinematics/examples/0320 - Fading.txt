@@ -1,0 +1,38 @@
+#
+# Sometimes you may want to fade between scenes. For instance, it's quite handy 
+# to fade out, do a teleport, then fade in -- and this to hide artifacts that
+# happen as the world around you load.
+#
+/scene start "Fading"
+	/setup
+		require ability flight
+		require mod "net.bdew.wurm.timelock.TimeLockMod"
+
+		option benchmarking on
+
+		# Fade to black until "fade off" triggers the end of it...
+		option fade on
+
+		tell console "timelock 08:30"
+		tell console "flight"
+		option hud off
+		tell server "#goto 918 641"
+		wait 4s
+
+		# Fade back to normal game
+		option fade off
+
+
+	/camera focus for 10s
+		waypoint -3 +0 +0
+		target +3 +5 +0
+		use easing quad inout
+		use pathing catmull-rom
+		
+	/camera move for 10s
+		waypoint +0 +5 +0
+		target +0 +0 +0
+		use easing quad inout
+		use pathing catmull-rom
+
+/scene end

@@ -1,0 +1,25 @@
+#
+# So far I've only used full seconds as a unit of time. That is of course not always optimal
+# as you very often want more control...
+#
+# When you see, for example, "3s", that means 3 seconds... the "s" can be also be the following:
+# - ms : milliseconds (1000ms = 1s, 9000 = 9s, etc)
+# - s  : second
+# - m  : minute
+# - h  : hour
+# - d  : day (I imagine this one will not be used very often)
+#
+/scene start "Less than a second"
+	/setup
+		tell console "flight"
+
+	# Move camera to +100 height for 3500 milliseconds (3.5 seconds)
+	/camera move for 3500ms
+		waypoint +0 +0 +100
+		target +0 +0 +0
+
+	# Rotate camera 2 degrees for 411 milliseconds (0.4 seconds)
+	/camera rotate for 411ms
+		waypoint +0 +2
+		target +0 +0
+/scene end

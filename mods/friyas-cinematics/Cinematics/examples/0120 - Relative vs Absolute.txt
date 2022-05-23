@@ -1,0 +1,64 @@
+#
+# Up until this point we've only used relative coordinates and bearings. That is, it was always
+# based on where you started from.
+#
+# Most of the time you actually want to use absolute coordinates, or absolute tiles. A map is
+# always square. Usually they are 2048 x 2048, but sometimes 4096 x 4096 and even 8192 x 8192.
+#
+# In this example we are going to use absolute coordinates in the center of a 4096 x 4096 map.
+# The server used is actually Zenath, and the location is around the starter town "Sol".
+#
+# There are a few things to put in mind before digging in here...
+#
+# 1) Since we are using absolute coordinates, we have to get there somehow. Preferably without
+#    the server kicking us out for being cheaters. Therefore we need to have a mod installed 
+#    on a server that provide us with the "#goto" command.
+#    You can find the mod here: https://forum.wurmonline.com/index.php?/topic/162940-released-gm-goto-server/
+#
+# 2) When you teleport in Wurm there is a lot of things going on, so it takes a little while
+#    for the world to get loaded at your new location. So we need to wait a bit after teleporting.
+#    So, we are introducing the "wait" in /setup.
+#
+# 3) Just like you would with 'tell console' (which tells the client a command), you can tell 
+#    the server something too. That's how we actually tell the server to teleport us.
+# 
+# 4) In case the goto mod is not installed, we give a heads up in the Cinematics tab. 
+#
+#
+# Alright, a lot at once!
+#
+/scene start
+	/setup
+		# See (4) above.
+		tell cinematics "This example requires the server mod GM Goto to be installed on the server. Edit the example for details..."
+		tell console "flight"
+
+		# Tell the server to move us to this absolute tile. See (3) above.
+		tell server "#goto 2149 1758"
+
+		# We need to wait for the world to load in. Let's be generous and give it four seconds. See (2) above.		
+		wait 4s
+
+	# Move us!
+	/camera move for 60s
+		waypoint 2150 1758 5
+		waypoint 2154 1746 400
+		waypoint 2099 1736 160
+		waypoint 2088 1735 15
+		waypoint 2087 1726 23
+		waypoint 2085 1716 40
+		waypoint 2051 1694 24
+		waypoint 2044 1672 25
+		waypoint 2038 1674 12
+		waypoint 2033 1677 12
+		target 2032 1682 12
+
+	# Instantly set our focus.
+	/camera focus for 0s
+		target 2033 1683 12
+
+	# Keep focus on that tile for the duration of the "move".
+	/camera focus for 60s
+		target 2033 1683 12
+
+/scene end

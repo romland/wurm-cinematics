@@ -1,0 +1,35 @@
+#
+# Doing things with numbers can sometimes make it a bit more complicated than it needs to be.
+#
+# So, instead of doing +3 or whatever on X or Y axis, you can use plain English.
+#
+# We'll use the last example but change it up to use English instead.
+#
+/scene start
+	/setup
+		tell console "flight"
+
+	# Let's say we want to go somewhere, and then return back to where we started.
+	/camera move for 15s
+		# First go three tiles south and 200 height upwards
+		waypoint 3 south 200 up
+
+		# Next we go 3 tiles east and an additional 100 height upwards (to 300)
+		waypoint 3 east 300 up
+
+		# When that is done, we return to where we started -- which is our final destination,
+		# the target. We just say, 0 in whatever direction, that will take us back to where
+		# we were.
+		target 0 north 0 up
+
+		# Directions that work are (clock wise):
+		# north, north-northeast, northeast, east-northeast, east, east-southeast, southeast, south-southeast,
+		# south, south-southwest, southwest, west-southwest, west, west-northwest, northwest, north-northwest
+		#
+		# Additionally, up and down works.
+		#
+		# The above directions can also be abbreviated to make it a bit less verbose:
+		# n, nne, ne, ene, e, ese, se, sse, s, ssw, sw, wsw, w, wnw, nw, nnw
+		#
+		# ...and likewise here: u for up, d for down.
+/scene end

@@ -1,0 +1,19 @@
+#
+# Like we've done in /setup a few times, you can also do in single commands to, for instance,
+# to delay their start.
+#
+/scene start "Wait in command..."
+	/setup
+		tell server "Starting scene in one second..."
+		tell console "flight"
+		wait 1s
+		option hud off
+
+	# Before running this command, wait three seconds (or 3000 milliseconds)...
+	/camera move for 15s
+		wait 3000ms
+		waypoint +0 -10 +80
+		waypoint +10 -10 +80
+		target +0 +0 +0
+
+/scene end

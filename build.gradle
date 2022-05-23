@@ -5,7 +5,7 @@ plugins {
 apply plugin:'java'
 
 group 'friya.wurmonline.client'
-version '1.1'
+version '1.2.0'
 
 repositories {
     mavenCentral()
@@ -38,7 +38,7 @@ task dist(type: Zip) {
         into(project.name, {
             from jar
         })
-        from fileTree(dir: 'mods', include: '*')
+        from fileTree(dir: 'mods', include: '**/*')
     })
 
     archiveName "${project.name}-${project.version}.zip"

@@ -1,0 +1,13 @@
+#
+# Server events are based on this template.
+#
+/scene start "$$SCENE_NAME"
+	/setup
+		require ability flight
+		tell console "flight"
+		option hud off
+		$$SETUP_EXTRAS
+
+$$SCENE_COMMANDS
+
+/scene end

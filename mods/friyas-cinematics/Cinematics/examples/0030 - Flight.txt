@@ -1,0 +1,17 @@
+#
+# Very often when you are creating a scene you will want to move at variable speed and height.
+# That's when 'flight' comes in handy. You may want to activate flight automatically when a 
+# scene starts running.
+#
+# We use the same scene as "Hello World" but with a new addition.
+#
+/scene start
+	# Our new addition, the /setup command
+	/setup
+		# This will make sure flight is enabled when the scene starts running.
+		tell console flight
+
+	# This is the same as in "Hello World"
+	/camera move for 3s
+		target +0 +3 +0
+/scene end

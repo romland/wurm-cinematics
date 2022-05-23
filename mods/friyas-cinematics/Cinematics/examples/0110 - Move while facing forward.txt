@@ -1,0 +1,24 @@
+#
+# Sometimes you may want to simply focus forward when moving around. This can be done in multiple ways
+# and you can do this with a lot more freedom if you look at the example called 
+# "Focus ahead with delayed movement".
+#
+/scene start
+	/setup
+		tell console "flight"
+
+	# Easily done, set target to be 'ahead'...
+	/camera focus for 20s
+		target ahead
+
+	# Move around while we are looking ahead...
+	/camera move for 20s
+		waypoint 10 south 50 up
+		waypoint 15 southeast 50 up
+		waypoint 20 southeast 50 up
+		waypoint 15 east 50 up
+
+		# Take us back to where we started.
+		target 0 east 0 up
+
+/scene end

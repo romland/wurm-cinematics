@@ -1,0 +1,39 @@
+#
+# In the previous examples I just covered easings, which says how a command should start and end.
+#
+# There's another use for the "use" keyword, and that is how commands should transition from one
+# waypoint to another. Without transition between waypoints we'd get a rather artificial feeling
+# to our movements.
+#
+# So, introducing: use pathing ...
+#
+# Currently there are only two different pathings implemented:
+# - linear
+# - catmull-rom
+#
+# If not specified "Cinematics" will always use catmull-rom, but there are definitely cases where 
+# you just want similar linear movement to make sure you really go through your control point.
+#
+/scene start
+	/setup
+		tell console "flight"
+
+	/camera focus for 0s
+		target +5 +5 -80
+	/camera focus for 20s
+		target +5 +5 -80
+
+	/camera move for 20s
+		waypoint 10 south 50 up
+		waypoint 15 southeast 50 up
+		waypoint 20 southeast 50 up
+		waypoint 15 east 50 up
+		target 0 east 0 up
+
+		# We don't actually need to specify quad, since that is default. But doing it for clarity.
+		use easing quad inout
+
+		# Use linear pathing between waypoints instead of the default catmull-rom...
+		use pathing linear
+
+/scene end

@@ -1,0 +1,41 @@
+#
+# To assist in synchronizing your scenes with music, you can also play a song.
+# Songs should be MP3s and always be located in the cinematics/audio/ folder.
+#
+# In the default distribution only one song is included, it's by Tagirijus and
+# called Ascent.
+#
+# For experimentation, key moments in the example song are:
+#	0:00 drums
+#	0:21 drums after pause
+#	0:47 violin
+#	1:21 rhythmic
+#	2:21 boombastic
+#	2:35 end
+#	2:42 total length
+#
+/scene start "Play a song"
+	/setup
+		tell cinematics "This script will run for 46 seconds..."
+		require ability flight
+		require mod "net.bdew.wurm.timelock.TimeLockMod"
+		option fade on
+		tell console "timelock 08:30"
+		tell console "flight"
+		tell server "#goto 909 661"
+		wait 3s
+		option fade off
+
+		#
+		# The instruction that plays the song...
+		#
+		audio play "Tagirijus_-_Ascent.mp3"
+		option hud off
+
+	/camera move for 46s
+		waypoint 909 661 400
+		target 943 653 104
+		use smoothing quad inout
+		use pathing linear
+	
+/scene end

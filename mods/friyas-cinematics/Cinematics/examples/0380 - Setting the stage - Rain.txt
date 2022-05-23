@@ -1,0 +1,28 @@
+#
+# Where would we be if we could not set the mood for a scene? In Cinematics you have
+# a command to tweak the environment:
+#
+# /world
+#
+# It works and looks like all the other commands involving the camera, you have waypoints
+# a target, you can wait, and you can use easing or pathing of your choice.
+#
+/scene start "Setting the stage - Rain"
+	/setup
+		option benchmarking on
+		option fade on
+		option hud off
+		wait 1s
+		option fade off
+
+	/world rain for 15s
+		waypoint 100
+		target 0
+
+	/camera focus for 15s
+		waypoint +13 +5 +0
+		target +3 +5 +0
+		use easing quad inout
+		use pathing catmull-rom
+
+/scene end

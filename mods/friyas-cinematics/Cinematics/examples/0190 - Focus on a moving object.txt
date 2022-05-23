@@ -1,0 +1,22 @@
+#
+# We just did follow the creature, now let's just look at a creature as it moves...
+#
+# In order to run this scene you will need to pick a target to look at, once you have
+# done that, enter its ID into the designated place below.
+#
+# Q: How do you get the ID of an object?
+# A: Right click on a creature, then go into the menu: 
+#    Friya's Cinematics -> Scene Designer -> Get object ID
+#
+# Note down the number (ID), then replace ID_HERE with the creature's ID.
+#
+/scene start "Look-at example"
+	/setup
+		tell cinematics "We need a creature to look at in order to run this, please edit the script for instructions..."
+
+	# The script will run for 60 seconds, but you can of course stop it at any point...
+	/camera focus for 60s
+		target creature ID_HERE
+		use easing quad inout
+
+/scene end

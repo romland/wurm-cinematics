@@ -1,0 +1,13 @@
+#
+# Turning off the HUD.
+#
+/scene start
+	/setup
+		tell console "flight"
+		# Turning off the HUD is kinda nice if you are recording something. Let's make it happen.
+		option hud off
+
+	# We now move 3 tiles east, 3 tiles south (so, southeast) and go up 200 height
+	/camera move for 5s
+		target +3 +3 +200
+/scene end

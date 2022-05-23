@@ -1,0 +1,28 @@
+#
+# The same as previous example, but start playing the song after the intro.
+#
+/scene start "Play a song"
+	/setup
+		tell cinematics "This script will run for 25 seconds..."
+		require ability flight
+		require mod "net.bdew.wurm.timelock.TimeLockMod"
+		option fade on
+		tell console "timelock 08:30"
+		tell console "flight"
+		tell server "#goto 909 661"
+		wait 3s
+		option fade off
+
+		#
+		# The instruction that plays the song -- but starts 21 seconds in ...
+		#
+		audio play "Tagirijus_-_Ascent.mp3" from 21s
+		option hud off
+
+	/camera move for 25s
+		waypoint 909 661 400
+		target 943 653 104
+		use smoothing quad inout
+		use pathing linear
+	
+/scene end

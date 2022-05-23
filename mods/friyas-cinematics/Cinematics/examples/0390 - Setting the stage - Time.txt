@@ -1,0 +1,33 @@
+#
+# Where would we be if we could not set the mood for a scene? In Cinematics you have
+# a command to tweak the environment:
+#
+# /world
+#
+# It works and looks like all the other commands involving the camera, you have waypoints
+# a target, you can wait, and you can use easing or pathing of your choice.
+#
+/scene start "Setting the stage - time"
+	/setup
+		option benchmarking on
+		option fade on
+		option hud off
+		wait 1s
+		option fade off
+
+	# With time we specify which hour and which minute we want to go to.
+	# In the case below, we first go to 23:59 (one minute to midnight),
+	# then go to mid-day where we also end our change.
+	/world time for 15s
+		waypoint 23 59
+		target 12 00
+		use easing linear inout
+		use pathing linear
+
+	/camera focus for 15s
+		waypoint +13 +5 +0
+		target +3 +5 +0
+		use easing quad inout
+		use pathing catmull-rom
+
+/scene end

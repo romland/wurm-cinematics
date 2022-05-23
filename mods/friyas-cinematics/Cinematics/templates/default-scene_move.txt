@@ -1,0 +1,34 @@
+#
+# Scene templates are used by the in-game "Scene designer". That is when you use "new script, 
+# "add waypoint", "add target", etc.
+#
+# You can modify this template to your heart's content and it will be used by any scene you
+# create from then on.
+#
+# The software will insert waypoints (etc) at e.g. $$CAMERA_MOVE_...
+#
+/scene start "$$SCENE_NAME"
+	/setup
+		# Will not start scene if you cannot fly (i.e. you are not GM)
+		require ability flight
+		# Will not start scene if this mod is not installed
+		require mod "net.bdew.wurm.timelock.TimeLockMod"
+		# Lock time at 08:30 (Wurm time)
+		tell console "timelock 08:30"
+		# Enable 'flight' for this scene
+		tell console "flight"
+		$$SETUP_EXTRAS
+		# Simply 'says' this in Local
+		tell server "This is take 49152! 3 -- 2 -- 1 ... *clap*"
+		# Wait for 1 second
+		wait 1s
+		# Hide heads up display
+		option hud off
+
+	/camera move for 10s
+		$$CAMERA_MOVE_WAYPOINTS
+		$$CAMERA_MOVE_TARGET
+		use smoothing quad inout
+		use pathing catmull-rom
+	
+/scene end

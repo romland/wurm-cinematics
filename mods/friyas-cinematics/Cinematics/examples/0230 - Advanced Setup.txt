@@ -1,0 +1,42 @@
+#
+# This simply reiterates what we've done before, but in a more complete example.
+#
+/scene start
+	/setup
+		# Say a little information in cinematics tab
+		tell cinematics "This is a /setup example..."
+
+		# Will not start scene if you cannot fly (i.e. you are not GM)
+		require ability flight
+
+		# Will not start scene if this mod is not installed
+		require mod "net.bdew.wurm.timelock.TimeLockMod"
+
+		# Lock time at 08:30 (Wurm time)
+		tell console "timelock 08:30"
+
+		# Enable 'flight' for this scene
+		tell console "flight"
+
+		# Hide heads up display
+		option hud off
+
+		# Goto a location on the server
+		tell server "#goto 1024 1024"
+
+		# Wait for a few seconds to load in landscape
+		wait 3s
+
+		tell cinematics "We're starting the scene..."
+
+	/camera focus for 9000ms
+		waypoint 1200 1200 0
+		target 1024 1024 100
+		use easing quad out
+
+	/camera move for 9000ms
+		waypoint 1010 1024 100
+		target 1024 1024 0
+		use easing bounce inout
+
+/scene end

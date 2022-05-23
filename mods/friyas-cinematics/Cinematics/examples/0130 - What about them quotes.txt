@@ -1,0 +1,14 @@
+#
+# See the "tell cinematics" below for an explanation.
+#
+/scene start "What about them quotes?"
+	/setup
+		tell cinematics "If you ever need to pass in multiple words as one argument, just surround them with quotes."
+		tell cinematics "You can open this example to see how it is done."
+		tell cinematics "This script does nothing but output this text."
+
+	# Okay, I lied. We moved the camera slightly.
+	/camera rotate for 1s
+		target +1 +0
+
+/scene end

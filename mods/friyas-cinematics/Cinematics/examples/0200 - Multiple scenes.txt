@@ -1,0 +1,37 @@
+#
+# A scene is defined as "a sequence of continuous action in a play, film, opera, or book".
+#
+# A script can consist of many scenes as you move from one location to another. Scenes
+# will run in sequence in the order in which they appear in the script. A scene ends when
+# all its commands has ended.
+#
+/scene start "Scene 1"
+	/setup
+		tell console flight
+
+	/camera focus for 5s
+		waypoint +0 +1000 +0
+		target +1000 +0 +0
+
+/scene end
+
+#
+# Our second scene will start as the first one is done, that is after five seconds.
+#
+/scene start "Scene 2"
+
+	/camera move for 5s
+		waypoint +0 +2 +0
+		target +0 +0 +0
+
+/scene end
+
+#
+# Our third scene will start as the second one is done, that is after ten seconds (in total).
+#
+/scene start "Scene 3"
+
+	/camera rotate for 3s
+		target +0 +0
+
+/scene end

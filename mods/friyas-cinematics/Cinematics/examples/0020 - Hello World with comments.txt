@@ -1,0 +1,21 @@
+#
+# This is a comment. Comments will be ignored when running a script.
+# Comments are what you should be looking for to get an explanation on what is happening.
+#
+# This file is a script (as in movie script, not as in programming), it has the .txt 
+# extension so they can easily be edited in e.g. notepad.
+#
+# Below I'll explain what is happening in here.
+#
+
+# Every script must have at least one scene. This is how you create a scene.
+/scene start
+
+	# This is a camera *command*, we tell the camera to move for 3 seconds (s for seconds).
+	/camera move for 3s
+		# It will not move on west/east (x), but it will move +3 tiles along north/south (+3 means 3 south).
+		# It will also not attempt to change height.
+		target +0 +3 +0
+
+# This is how you end a scene.
+/scene end

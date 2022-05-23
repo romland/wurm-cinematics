@@ -1,0 +1,24 @@
+#
+# Instead of changing individual time units of every command (which can be rather annoying
+# if you have large scenes) -- you can set the speed at which the scene should run altogether.
+#
+# Again, in /setup...
+#
+/scene start
+	/setup
+		tell console "flight"
+
+		# Run this scene at 50% speed (you can also set this to 200% or any other number)		
+		option speed 50%
+
+		wait 1s
+		option hud off
+
+	/camera move for 15s
+		wait 3000ms
+		waypoint +0 -10 +80
+		waypoint +10 -10 +80
+		target +0 +0 +0
+
+/scene end
+

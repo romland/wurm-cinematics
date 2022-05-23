@@ -1,0 +1,24 @@
+#
+# In order to run this scene you will need to pick a target to follow, once you have
+# done that, enter its ID into the designated place below.
+#
+# Q: How do you get the ID of an object?
+# A: Right click on a creature, then go into the menu: 
+#    Friya's Cinematics -> Scene Designer -> Get object ID
+#
+# Note down the number (ID), then replace ID_HERE with the creature's ID.
+#
+/scene start "Follow example"
+	/setup
+		tell console "flight"
+		tell cinematics "We need a creature to follow in order to run this, please edit the script for instructions..."
+
+	# The script will run for 60 seconds, but you can of course stop it at any point...
+	/camera follow for 60s
+		#
+		# This says we should place ourselves 1 tile south of the creature, and move with it as it moves.
+		#
+		target creature ID_HERE +0 +1 +0
+		use easing quad inout
+
+/scene end

@@ -1,0 +1,4 @@
+/scene start
+	/camera move for 3s
+		target +0 +3 +0
+/scene end

@@ -1,0 +1,73 @@
+#
+# Two ropes walk into an old western saloon.
+# The first rope goes up to the bar and asks for a beer.
+#
+# “We don’t serve ropes in this saloon,” sneers the bartender, who 
+# picks up the rope, whirls him around over his head, and tosses 
+# him out into the street.
+#
+# “Uh, oh. I’d better disguise myself,” thinks the second rope.
+#
+# He ruffles up his ends to make himself look bigger and twists 
+# himself into a circle. Then he too sidles up to the bar.
+#
+# “Hmmm. Are you one of them ropes?” snarls the bartender.
+#
+# “No. I’m a frayed knot.”
+#
+# ================================================================
+#
+# What this example does is simply: Move in a circular path around 
+# a focus point. It uses fractional tile positions.
+#
+# It will run for 50 seconds.
+#
+/scene start "Afraid not a square"
+	/setup
+		option fade on
+		tell server "#goto 1205 1200"
+		wait 3s
+		tell console "timelock 12"
+		tell console "flight"
+		option hud off
+		option benchmarking on
+		option fade off
+
+	/camera move for 50s
+		waypoint 1205.0 1200.0 200.0
+
+		waypoint 1204.7552 1198.455 200.0
+		waypoint 1204.045 1197.061 200.0
+		waypoint 1202.939 1195.955 200.0
+
+		waypoint 1201.545 1195.2448 200.0
+		waypoint 1200.0 1195.0 200.0
+		waypoint 1198.455 1195.2448 200.0
+
+		waypoint 1197.061 1195.955 200.0
+		waypoint 1195.955 1197.061 200.0
+		waypoint 1195.2448 1198.455 200.0
+
+		waypoint 1195.0 1200.0 200.0
+		waypoint 1195.2448 1201.545 200.0
+		waypoint 1195.955 1202.939 200.0
+
+		waypoint 1197.061 1204.045 200.0
+		waypoint 1198.455 1204.7552 200.0
+		waypoint 1200.0 1205.0 200.0
+
+		waypoint 1201.545 1204.7552 200.0
+		waypoint 1202.939 1204.045 200.0
+		waypoint 1204.045 1202.939 200.0
+
+		target 1204.7552 1201.545 200.0
+
+		use easing quad inout
+		use pathing catmull-rom
+
+	/camera focus for 0s
+		target 1200.5 1200.5 0
+	/camera focus for 50s
+		target 1200.5 1200.5 0
+
+/scene end

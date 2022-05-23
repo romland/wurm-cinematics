@@ -1,0 +1,25 @@
+#
+# You can add "repeat" to a command and it will repeat it that number of times.
+#
+# If you want to repeat something forever, you set it to "repeat -1".
+#
+/scene start "Repeating a command"
+
+	/setup
+		tell console "flight"
+		option hud off
+		option benchmarking on
+
+	/camera focus for 5s
+		waypoint -3 +5 +0
+		target +3 +5 +0
+		use easing quad inout
+		use pathing catmull-rom
+		repeat 2
+		
+	/camera move for 5s
+		waypoint +0 -2 +0
+		target +0 +0 +0
+		repeat 2
+
+/scene end

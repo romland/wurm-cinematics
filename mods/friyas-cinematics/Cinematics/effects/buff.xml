@@ -1,0 +1,934 @@
+<buff>
+	<CRBONUS>
+		<name>Combat rating bonus</name>
+		<typeId>0</typeId>
+		<icon>123</icon>
+		<description>Up to 5 in combat rating bonus</description>
+	</CRBONUS>
+	<FARWALKER>
+		<name>FarWalker</name>
+		<typeId>1</typeId>
+		<icon>120</icon>
+		<description>Increased movement speed, immune to fall damage, removes hurting debuff</description>
+	</FARWALKER>
+	<DISEASE>
+		<name>Disease</name>
+		<typeId>2</typeId>
+		<icon>121</icon>
+		<description>You scratch yourself. What did you catch now?! You have a disease!</description>
+	</DISEASE>
+	<ENEMY>
+		<name>Enemy presence</name>
+		<typeId>4</typeId>
+		<icon>124</icon>
+		<description>Your normal skillgains suffer</description>
+	</ENEMY>
+	<LINKS>
+		<name>Links</name>
+		<typeId>5</typeId>
+		<icon>122</icon>
+		<description></description>
+	</LINKS>
+	<FAITHBONUS>
+		<name>Faith bonus</name>
+		<typeId>6</typeId>
+		<icon>138</icon>
+		<description>You get bonus from the influence of your deity</description>
+	</FAITHBONUS>
+	<WOUNDMOVE>
+		<name>Hurting</name>
+		<typeId>7</typeId>
+		<icon>134</icon>
+		<description>Lowers movement speed</description>
+	</WOUNDMOVE>
+	<DEITYFAVORGAIN>
+		<name>Deity favor gain</name>
+		<typeId>8</typeId>
+		<icon>143</icon>
+		<description>Increased favor gain</description>
+	</DEITYFAVORGAIN>
+	<DEITYSTAMINAGAIN>
+		<name>Deity stamina gain</name>
+		<typeId>9</typeId>
+		<icon>142</icon>
+		<description>Spirit Stamina</description>
+	</DEITYSTAMINAGAIN>	
+	<DEITYCRBONUS>
+		<name>Deity combat rating bonus</name>
+		<typeId>10</typeId>
+		<icon>141</icon>
+		<description>Spirit Fervor</description>
+	</DEITYCRBONUS>	
+	<DEITYMOVEBONUS>
+		<name>Deity movement bonus</name>
+		<typeId>11</typeId>
+		<icon>140</icon>
+		<description>Spirit Speed</description>
+	</DEITYMOVEBONUS>	
+	<LOVEEFFECT>
+		<name>Love effect</name>
+		<typeId>12</typeId>
+		<icon>133</icon>
+		<description></description>
+	</LOVEEFFECT>	
+	<RODBEGUILINGEFFECT>
+		<name>Rod of Beguiling effect</name>
+		<typeId>13</typeId>
+		<icon>127</icon>
+		<description></description>
+	</RODBEGUILINGEFFECT>	
+	<FINGERFOEFFECT>
+		<name>Finger of Fo effect</name>
+		<typeId>14</typeId>
+		<icon>137</icon>
+		<description>Prevents wounds of every allied person in proximity from worsening</description>
+	</FINGERFOEFFECT>
+	<CROWNMAGRANONEFFECT>
+		<name>Crown of Magranon effect</name>
+		<typeId>15</typeId>
+		<icon>145</icon>
+		<description>Protects as a steel great helm and gives every allied person in proximity a non-stackable Combat Rating bonus of 1</description>
+	</CROWNMAGRANONEFFECT>
+	<ORBDOOM_EFFECT>
+		<name>Orb of Doom effect</name>
+		<typeId>16</typeId>
+		<icon>132</icon>
+		<description>You are marked by the Orb of Doom!</description>
+	</ORBDOOM_EFFECT>
+	<OUTLAW>
+		<name>Outlaw</name>
+		<typeId>17</typeId>
+		<icon>131</icon>
+		<description>You are an outlaw!! You can be attacked by anyone!</description>
+	</OUTLAW>	
+	<fireRESIST>
+		<name>Fire resistance</name>
+		<typeId>20</typeId>
+		<icon>136</icon>
+		<description>Reduces fire damage taken by 15%</description>
+	</fireRESIST>
+	<coldRESIST>
+		<name>Cold resistance</name>
+		<typeId>21</typeId>
+		<icon>146</icon>
+		<description>Reduces cold damage taken by 15%</description>
+	</coldRESIST>
+	<diseaseRESIST>
+		<name>Disease resistance</name>
+		<typeId>22</typeId>
+		<icon>139</icon>
+		<description>Reduces disease damage taken by 15%</description>
+	</diseaseRESIST>
+	<physicalRESIST>
+		<name>Physical resistance</name>
+		<typeId>23</typeId>
+		<icon>130</icon>
+		<description>Reduces physical damage taken by 10%</description>
+	</physicalRESIST>
+	<pierceRESIST>
+		<name>Pierce resistance</name>
+		<typeId>24</typeId>
+		<icon>129</icon>
+		<description>Reduces pierce damage taken by 15%</description>
+	</pierceRESIST>
+	<slashRESIST>
+		<name>Slash resistance</name>
+		<typeId>25</typeId>
+		<icon>126</icon>
+		<description>Reduces slash damage taken by 15%</description>
+	</slashRESIST>
+	<crushRESIST>
+		<name>Crush resistance</name>
+		<typeId>26</typeId>
+		<icon>144</icon>
+		<description>Reduces crush damage taken by 15%</description>
+	</crushRESIST>
+	<biteRESIST>
+		<name>Bite resistance</name>
+		<typeId>27</typeId>
+		<icon>125</icon>
+		<description>Reduces bite damage taken by 15%</description>
+	</biteRESIST>
+	<poisonRESIST>
+		<name>Poison resistance</name>
+		<typeId>28</typeId>
+		<icon>128</icon>
+		<description>Reduces poison damage taken by 15%</description>
+	</poisonRESIST>
+	<waterRESIST>
+		<name>Water resistance</name>
+		<typeId>29</typeId>
+		<icon>165</icon>
+		<description>Reduces water damage taken by 15%</description>
+	</waterRESIST>
+	<acidRESIST>
+		<name>Acid resistance</name>
+		<typeId>30</typeId>
+		<icon>163</icon>
+		<description>Reduces acid damage taken by 15%</description>
+	</acidRESIST>
+	<internalRESIST>
+		<name>Internal resistance</name>
+		<typeId>31</typeId>
+		<icon>164</icon>
+		<description>Reduces internal damage taken by 15%</description>
+	</internalRESIST>
+	<fireVULNERABILITY>
+		<name>Fire vulnerability</name>
+		<typeId>32</typeId>
+		<icon>135</icon>
+		<description>Increases fire damage taken by 10%</description>
+	</fireVULNERABILITY>
+	<coldVULNERABILITY>
+		<name>Cold vulnerability</name>
+		<typeId>33</typeId>
+		<icon>147</icon>
+		<description>Increases cold damage taken by 10%</description>
+	</coldVULNERABILITY>
+	<diseaseVULNERABILITY>
+		<name>Disease vulnerability</name>
+		<typeId>34</typeId>
+		<icon>158</icon>
+		<description>Increases disease damage taken by 10%</description>
+	</diseaseVULNERABILITY>
+	<physicalVULNERABILITY>
+		<name>Physical vulnerability</name>
+		<typeId>35</typeId>
+		<icon>148</icon>
+		<description>Increases physical damage taken by 5%</description>
+	</physicalVULNERABILITY>
+	<pierceVULNERABILITY>
+		<name>Pierce vulnerability</name>
+		<typeId>36</typeId>
+		<icon>149</icon>
+		<description>Increases pierce damage taken by 10%</description>
+	</pierceVULNERABILITY>
+	<slashVULNERABILITY>
+		<name>Slash vulnerability</name>
+		<typeId>37</typeId>
+		<icon>150</icon>
+		<description>Increases slash damage taken by 10%</description>
+	</slashVULNERABILITY>
+	<crushVULNERABILITY>
+		<name>Crush vulnerability</name>
+		<typeId>38</typeId>
+		<icon>151</icon>
+		<description>Increases crush damage taken by 10%</description>
+	</crushVULNERABILITY>
+	<biteVULNERABILITY>
+		<name>Bite vulnerability</name>
+		<typeId>39</typeId>
+		<icon>152</icon>
+		<description>Increases bite damage taken by 10%</description>
+	</biteVULNERABILITY>
+	<poisonVULNERABILITY>
+		<name>Poison vulnerability</name>
+		<typeId>40</typeId>
+		<icon>153</icon>
+		<description>Increases poison damage taken by 10%</description>
+	</poisonVULNERABILITY>
+	<waterVULNERABILITY>
+		<name>Water vulnerability</name>
+		<typeId>41</typeId>
+		<icon>154</icon>
+		<description>Increases water damage taken by 10%</description>
+	</waterVULNERABILITY>
+	<acidVULNERABILITY>
+		<name>Acid vulnerability</name>
+		<typeId>42</typeId>
+		<icon>155</icon>
+		<description>Increases acid damage taken by 10%</description>
+	</acidVULNERABILITY>
+	<internalVULNERABILITY>
+		<name>Internal vulnerability</name>
+		<typeId>43</typeId>
+		<icon>156</icon>
+		<description>Increases internal damage taken by 10%</description>
+	</internalVULNERABILITY>
+	<ILLUSION>
+		<name>Illusion</name>
+		<typeId>44</typeId>
+		<icon>157</icon>
+		<description>You have changed appearance!</description>
+	</ILLUSION>		
+	<POISON>
+		<name>Poison</name>
+		<typeId>45</typeId>
+		<icon>172</icon>
+		<description>You have poisoned wound(s) which have a chance of killing you on a healing tick</description>
+	</POISON>
+	<DETECT_INVIS>
+		<name>Detect Invisible</name>
+		<typeId>46</typeId>
+		<icon>175</icon>
+		<description>Detect Invisible!</description>
+	</DETECT_INVIS>
+	<STUNNED>
+		<name>Stunned</name>
+		<typeId>47</typeId>
+		<icon>170</icon>
+		<description>You are Stunned!!</description>
+	</STUNNED>
+	<HUNTED>
+		<name>Hunted</name>
+		<typeId>48</typeId>
+		<icon>159</icon>
+		<description>You are Hunted!! You can be attacked by anyone!</description>
+	</HUNTED>
+	<NEWBIE_HEALTH>
+		<name>Newbie health</name>
+		<typeId>49</typeId>
+		<icon>160</icon>
+		<description>Increased healing for new players!</description>
+	</NEWBIE_HEALTH>
+	<NEWBIE_AGGRO_RANGE>
+		<name>Newbie aggro range</name>
+		<typeId>50</typeId>
+		<icon>161</icon>
+		<description>Decreased creature aggression range!</description>
+	</NEWBIE_AGGRO_RANGE>
+	<NEWBIE_FOOD>
+		<name>Newbie food</name>
+		<typeId>51</typeId>
+		<icon>162</icon>
+		<description>Decreased need for food and drink</description>
+	</NEWBIE_FOOD>
+	<HATE_FEAR_EFFECT>
+		<name>Fear effect</name>
+		<typeId>52</typeId>
+		<icon>166</icon>
+		<description>Prevents creatures from targeting you</description>
+	</HATE_FEAR_EFFECT>
+	<HATE_DOUBLE_WAR>
+		<name>Rage</name>
+		<typeId>53</typeId>
+		<icon>167</icon>
+		<description>Increases damage done in combat by 50%</description>
+	</HATE_DOUBLE_WAR>
+	<HATE_DOUBLE_STRUCT>
+		<name>Increased structure damage</name>
+		<typeId>54</typeId>
+		<icon>168</icon>
+		<description>Doubles damage done to structures</description>
+	</HATE_DOUBLE_STRUCT>
+	<POWER_NO_ELEMENTAL>
+		<name>Elemental immunity</name>
+		<typeId>55</typeId>
+		<icon>174</icon>
+		<description>You are immune to elemental damage</description>
+	</POWER_NO_ELEMENTAL>
+	<POWER_IGNORE_TRAPS>
+		<name>Trap immunity</name>
+		<typeId>56</typeId>
+		<icon>179</icon>
+		<description>You are immune to the effects of traps</description>
+	</POWER_IGNORE_TRAPS>
+	<LOVE_HEALING_HANDS>
+		<name>Healing hands</name>
+		<typeId>57</typeId>
+		<icon>178</icon>
+		<description>Improves the effectiveness of healing actions and natural regeneration by a factor of 1.5</description>
+	</LOVE_HEALING_HANDS>
+	<HATE_SPELL_IMMUNITY>
+		<name>Spell immunity</name>
+		<typeId>58</typeId>
+		<icon>177</icon>
+		<description>You are immune to aggressive spells targeted at you</description>
+	</HATE_SPELL_IMMUNITY>
+	<POWER_USES_LESS_STAMINA>
+		<name>Stamina of the Vibrant Light</name>
+		<typeId>59</typeId>
+		<icon>169</icon>
+		<description>Reduces stamina loss by 50%</description>
+	</POWER_USES_LESS_STAMINA>
+	<KNOWLEDGE_NO_DECAY>
+		<name>No skill loss</name>
+		<typeId>60</typeId>
+		<icon>173</icon>
+		<description>You will not lose any skill in non-combat skills when dying</description>
+	</KNOWLEDGE_NO_DECAY>
+	<KNOWLEDGE_INCREASED_SKILL_GAIN>
+		<name>Intellect of the Enlightened</name>
+		<typeId>61</typeId>
+		<icon>176</icon>
+		<description>Skill gains are increased by 25%, except for gains in fighting</description>
+	</KNOWLEDGE_INCREASED_SKILL_GAIN>
+	<INSANITY_SHIELD_GONE>
+		<name>Shield of the Gone</name>
+		<typeId>62</typeId>
+		<icon>171</icon>
+		<description>Reduces damage and healing done to you, 6% at LVL7 up to 30% at LVL11</description>
+	</INSANITY_SHIELD_GONE>
+	<SPELL_FOREST_GIANT>
+	<name>Forest Giant Strength</name>
+		<typeId>63</typeId>
+		<icon>185</icon>
+		<description>Makes you as strong as a giant</description>
+	</SPELL_FOREST_GIANT>
+	<SPELL_BEARPAWS>
+	<name>Bearpaws</name>
+		<typeId>64</typeId>
+		<icon>180</icon>
+		<description>Increases unarmed damage</description>
+	</SPELL_BEARPAWS>
+	<SPELL_MORNING_FOG>
+	<name>Morning Fog</name>
+		<typeId>65</typeId>
+		<icon>189</icon>
+		<description>Protections from thorns and lava</description>
+	</SPELL_MORNING_FOG>
+	<SPELL_NOLOCATE>
+	<name>Nolocate</name>
+		<typeId>66</typeId>
+		<icon>190</icon>
+		<description>Has a chance of hiding you from locate spells</description>
+	</SPELL_NOLOCATE>
+	<SPELL_OAKSHELL>
+		<name>Oakshell</name>
+		<typeId>67</typeId>
+		<icon>191</icon>
+		<description>Better natural armour</description>
+	</SPELL_OAKSHELL>
+	<SPELL_WILLOWSPINE>
+		<name>Willowspine</name>
+		<typeId>68</typeId>
+		<icon>195</icon>
+		<description>You are better at dodging</description>
+	</SPELL_WILLOWSPINE>
+	<SPELL_SIXTH_SENSE>
+		<name>Sixth sense</name>
+		<typeId>69</typeId>
+		<icon>192</icon>
+		<description>Allows you to detect traps.</description>
+	</SPELL_SIXTH_SENSE>
+	<SPELL_HELL_STRENGTH>
+		<name>Hell strength</name>
+		<typeId>70</typeId>
+		<icon>188</icon>
+		<description>Increased strength.</description>
+	</SPELL_HELL_STRENGTH>
+	<SPELL_FRANTIC_CHARGE>
+		<name>Frantic charge</name>
+		<typeId>71</typeId>
+		<icon>186</icon>
+		<description>You move faster.</description>
+	</SPELL_FRANTIC_CHARGE>
+	<SPELL_GOAT_SHAPE>
+		<name>Goat shape</name>
+		<typeId>72</typeId>
+		<icon>187</icon>
+		<description>Increases your climbing skill.</description>
+	</SPELL_GOAT_SHAPE>
+	<SPELL_TRUE_HIT>
+		<name>Truehit</name>
+		<typeId>73</typeId>
+		<icon>194</icon>
+		<description>Increases your chance to hit.</description>
+	</SPELL_TRUE_HIT>
+	
+	<SPELL_THORNSHELL>
+		<name>Thorn shell</name>
+		<typeId>74</typeId>
+		<icon>197</icon>
+		<description>Better natural armour and may damage opponent upon hit.</description>
+	</SPELL_THORNSHELL>
+	
+	<SPELL_STONESKIN>
+		<name>Stone skin</name>
+		<typeId>75</typeId>
+		<icon>198</icon>
+		<description>Ignores the next 3 wounds</description>
+	</SPELL_STONESKIN>
+	
+	<SPELL_RUST_MONSTER>
+		<name>Rust monster</name>
+		<typeId>76</typeId>
+		<icon>199</icon>
+		<description>Enemy weapons take extra damage.</description>
+	</SPELL_RUST_MONSTER>
+	
+	<SPELL_KARMA_RIVER>
+		<name>Karma river</name>
+		<typeId>77</typeId>
+		<icon>200</icon>
+		<description>Slows down your attack speed</description>
+	</SPELL_KARMA_RIVER>
+	
+	<SPELL_KARMA_CONTINUUM>
+		<name>Continuum</name>
+		<typeId>78</typeId>
+		<icon>201</icon>
+		<description>20% damage reduction.</description>
+	</SPELL_KARMA_CONTINUUM>
+	
+	<SPELL_EXCEL>
+		<name>Excel</name>
+		<typeId>79</typeId>
+		<icon>202</icon>
+		<description>Increased parry rate with shield and weapons.</description>
+	</SPELL_EXCEL>
+	
+	<SPELL_TRUE_STRIKE>
+		<name>True strike</name>
+		<typeId>80</typeId>
+		<icon>203</icon>
+		<description>You deal critical damage on the next hit.</description>
+	</SPELL_TRUE_STRIKE>
+
+	<SPELL_KARMA_INCINERATION>
+		<name>Incineration</name>
+		<typeId>103</typeId>
+		<icon>224</icon>
+		<description>Your guts are burning.</description>
+	</SPELL_KARMA_INCINERATION>	
+	
+	<RES_TENTACLES>
+		<name>Tentacles resistance</name>
+		<typeId>81</typeId>
+		<icon>218</icon>
+		<description>You are resistant to the Tentacles spell.</description>
+	</RES_TENTACLES>
+	
+	<RES_DISPEL>
+		<name>Dispel resistance</name>
+		<typeId>82</typeId>
+		<icon>204</icon>
+		<description>You are resistant to Dispel.</description>
+	</RES_DISPEL>
+	
+	<RES_DRAINHEALTH>
+		<name>Drain Health resistance</name>
+		<typeId>83</typeId>
+		<icon>205</icon>
+		<description>You are resistant to Drain Health.</description>
+	</RES_DRAINHEALTH>
+	
+	<RES_DRAINSTAMINA>
+		<name>Drain Stamina resistance</name>
+		<typeId>84</typeId>
+		<icon>206</icon>
+		<description>You are resistant to Drain Stamina.</description>
+	</RES_DRAINSTAMINA>
+	
+	<RES_FIREHEART>
+		<name>Fireheart resistance</name>
+		<typeId>85</typeId>
+		<icon>207</icon>
+		<description>You are resistant to Firehearth.</description>
+	</RES_FIREHEART>
+	
+	<RES_FIREPILLAR>
+		<name>Firepillar resistance</name>
+		<typeId>86</typeId>
+		<icon>208</icon>
+		<description>You are resistant to Firepillar.</description>
+	</RES_FIREPILLAR>
+	
+	<RES_FUNGUSTRAP>
+		<name>Fungus Trap resistance</name>
+		<typeId>87</typeId>
+		<icon>209</icon>
+		<description>You are resistant to Fungus Trap.</description>
+	</RES_FUNGUSTRAP>
+	
+	<RES_HEAL>
+		<name>Heal resistance</name>
+		<typeId>88</typeId>
+		<icon>210</icon>
+		<description>You are resistant to Heal.</description>
+	</RES_HEAL>
+	
+	<RES_ICEPILLAR>
+		<name>Icepillar resistance</name>
+		<typeId>89</typeId>
+		<icon>211</icon>
+		<description>You are resistant to Icepillar.</description>
+	</RES_ICEPILLAR>
+	
+	<RES_LIGHTOFFO>
+		<name>Light of Fo resistance</name>
+		<typeId>90</typeId>
+		<icon>212</icon>
+		<description>You are resistant to Light of Fo.</description>
+	</RES_LIGHTOFFO>
+	
+	<RES_PAINRAIN>
+		<name>Pain Rain resistance</name>
+		<typeId>91</typeId>
+		<icon>213</icon>
+		<description>You are resistant to Pain Rain.</description>
+	</RES_PAINRAIN>
+	
+	<RES_ROTTINGGUT>
+		<name>Rotting Gut resistance</name>
+		<typeId>92</typeId>
+		<icon>214</icon>
+		<description>You are resistant to Rotting Gut.</description>
+	</RES_ROTTINGGUT>
+	
+	<RES_SCORNLIBILA>
+		<name>Scorn of Libila resistance</name>
+		<typeId>215</typeId>
+		<icon>163</icon>
+		<description>You are resistant to Scorn of Libila.</description>
+	</RES_SCORNLIBILA>
+	
+	<RES_SHARDOFICE>
+		<name>Shard of Ice resistance</name>
+		<typeId>94</typeId>
+		<icon>216</icon>
+		<description>You are resistant to Shard of Ice.</description>
+	</RES_SHARDOFICE>
+	
+	<RES_SMITE>
+		<name>Smite resistance</name>
+		<typeId>95</typeId>
+		<icon>217</icon>
+		<description>You are resistant to Smite.</description>
+	</RES_SMITE>
+	
+	<RES_WEAKNESS>
+		<name>Weakness resistance</name>
+		<typeId>96</typeId>
+		<icon>163</icon>
+		<description>You are resistant to Weakness.</description>
+	</RES_WEAKNESS>
+	
+	<RES_GENERIC>
+		<name>Generic resistance</name>
+		<typeId>97</typeId>
+		<icon>163</icon>
+		<description>You are resistant to something undefined (if you see this there might be a bug).</description>
+	</RES_GENERIC>
+	
+	<ARMOUR_LIMIT_HEAVY>
+		<name>Armour Limit Heavy</name>
+		<typeId>98</typeId>
+		<icon>220</icon>
+		<description>-30% penalty to spell casting and archery.</description>
+	</ARMOUR_LIMIT_HEAVY>
+	
+	<ARMOUR_LIMIT_MEDIUM>
+		<name>Armour Limit Medium</name>
+		<typeId>99</typeId>
+		<icon>221</icon>
+		<description>-15% penalty to spell casting and archery..</description>
+	</ARMOUR_LIMIT_MEDIUM>
+	
+	<ARMOUR_LIMIT_LIGHT>
+		<name>Armour Limit Light</name>
+		<typeId>222</typeId>
+		<icon>163</icon>
+		<description>No penalty or bonus to spell casting or archery.</description>
+	</ARMOUR_LIMIT_LIGHT>
+	
+	<ARMOUR_LIMIT_NONE>
+		<name>Armour Limit None</name>
+		<typeId>101</typeId>
+		<icon>223</icon>
+		<description>30% bonus to spell casting and archery.</description>
+	</ARMOUR_LIMIT_NONE>
+	
+	<SPELL_TANGLEWEAVE>
+		<name>Tangle Weave</name>
+		<typeId>102</typeId>
+		<icon>223</icon>
+		<description>Casting time is increased.</description>
+	</SPELL_TANGLEWEAVE>
+
+	<ITEM_COTTON_TWOHANDED>
+		<name>Shoulder pads</name>
+		<typeId>104</typeId>
+		<icon>163</icon>
+		<description>Cloth armour pieces glance bonus versus crushing.</description>		
+	</ITEM_COTTON_TWOHANDED>
+	
+	<ITEM_COTTON_PIERCING>
+		<name>Shoulder pads</name>
+		<typeId>105</typeId>
+		<icon>163</icon>
+		<description>Cloth armour pieces glance bonus versus slashing.</description>		
+	</ITEM_COTTON_PIERCING>
+	
+	<ITEM_COTTON_BASHING>
+		<name>Shoulder pads</name>
+		<typeId>106</typeId>
+		<icon>163</icon>
+		<description>Dodge bonus vs bashing wearing no armour.</description>		
+	</ITEM_COTTON_BASHING>
+	
+	<ITEM_LEATHER_TWOHANDED>
+		<name>Shoulder pads</name>
+		<typeId>107</typeId>
+		<icon>163</icon>
+		<description>Leather armour glance bonus vs twohanded.</description>		
+	</ITEM_LEATHER_TWOHANDED>
+	
+	<ITEM_LEATHER_TWOHANDED>
+		<name>Shoulder pads</name>
+		<typeId>108</typeId>
+		<icon>163</icon>
+		<description>Studded leather armour glance bonus vs twohanded.</description>		
+	</ITEM_LEATHER_TWOHANDED>
+	
+	<ITEM_LEATHERSTUDDED_BASHING>
+		<name>Shoulder pads</name>
+		<typeId>109</typeId>
+		<icon>163</icon>
+		<description>Dodge bonus vs bashing wearing light armour.</description>		
+	</ITEM_LEATHERSTUDDED_BASHING>
+	
+	<ITEM_CHAIN_BASHING>
+		<name>Shoulder pads</name>
+		<typeId>110</typeId>
+		<icon>163</icon>
+		<description>Dodge bonus vs bashing wearing medium armour.</description>		
+	</ITEM_CHAIN_BASHING>
+	
+	<ITEM_COTTON_SLASHDAM>
+		<name>Shoulder pads</name>
+		<typeId>111</typeId>
+		<icon>163</icon>
+		<description>Cloth armour piece damage reduction vs slash damage.</description>		
+	</ITEM_COTTON_SLASHDAM>
+	
+	<ITEM_FACEDAM>
+		<name>Shoulder pads</name>
+		<typeId>112</typeId>
+		<icon>163</icon>
+		<description>Face damage protection.</description>		
+	</ITEM_FACEDAM>
+	
+	<ITEM_LEATHER_CRUSHDAM>
+		<name>Shoulder pads</name>
+		<typeId>113</typeId>
+		<icon>163</icon>
+		<description>Leather armour piece damage reduction vs crush damage.</description>		
+	</ITEM_LEATHER_CRUSHDAM>
+	
+	<ITEM_CHAIN_SLASHDAM>
+		<name>Shoulder pads</name>
+		<typeId>114</typeId>
+		<icon>163</icon>
+		<description>Chain armour piece damage reduction vs crush damage.</description>		
+	</ITEM_CHAIN_SLASHDAM>
+	
+	<ITEM_CHAIN_PIERCEDAM>
+		<name>Shoulder pads</name>
+		<typeId>115</typeId>
+		<icon>163</icon>
+		<description>Chain armour piece damage reduction vs piercing damage.</description>		
+	</ITEM_CHAIN_PIERCEDAM>
+	
+	<ITEM_AREA_SPELL>
+		<name>Shoulder pads</name>
+		<typeId>116</typeId>
+		<icon>163</icon>
+		<description>Area spell damage increase when casting.</description>		
+	</ITEM_AREA_SPELL>
+	
+	<ITEM_ENCHANT_DAMREDUCT>
+		<name>Shoulder pads</name>
+		<typeId>117</typeId>
+		<icon>163</icon>
+		<description>Enchant damage reduction when hit.</description>		
+	</ITEM_ENCHANT_DAMREDUCT>
+	
+	<ITEM_AREASPELL_DAMREDUCT>
+		<name>Shoulder pads</name>
+		<typeId>118</typeId>
+		<icon>163</icon>
+		<description>Area spell damage reduction when hit.</description>		
+	</ITEM_AREASPELL_DAMREDUCT>
+	
+	<ITEM_MEDLIGHT_DAMINCREASE>
+		<name>Shoulder pads</name>
+		<typeId>119</typeId>
+		<icon>163</icon>
+		<description>Weapon damage increase while wearing medium or light armour.</description>		
+	</ITEM_MEDLIGHT_DAMINCREASE>
+	
+	<ITEM_HEAVY_ARCHERY>
+		<name>Shoulder pads</name>
+		<typeId>120</typeId>
+		<icon>163</icon>
+		<description>Archery fail reduction when wearing heavy or medium armour.</description>		
+	</ITEM_HEAVY_ARCHERY>
+	
+	
+	<ITEM_RING_STAMINA>
+		<name>Ring of Stamina</name>
+		<typeId>121</typeId>
+		<icon>163</icon>
+		<description>Stamina reduction bonus.</description>		
+	</ITEM_RING_STAMINA>
+	
+	<ITEM_RING_DODGE>
+		<name>Ring of Dodging</name>
+		<typeId>122</typeId>
+		<icon>163</icon>
+		<description>Dodge bonus.</description>		
+	</ITEM_RING_DODGE>
+	
+	<ITEM_RING_CR>
+		<name>Ruby Ring</name>
+		<typeId>123</typeId>
+		<icon>163</icon>
+		<description>Combat rating bonus.</description>		
+	</ITEM_RING_CR>
+	
+	<ITEM_RING_SPELLRESIST>
+		<name>Ring of Spell Resistance</name>
+		<typeId>124</typeId>
+		<icon>163</icon>
+		<description>Spell resist bonus.</description>		
+	</ITEM_RING_SPELLRESIST>
+	
+	<ITEM_RING_HEALING>
+		<name>Ring of Healing</name>
+		<typeId>125</typeId>
+		<icon>163</icon>
+		<description>Healing bonus.</description>		
+	</ITEM_RING_HEALING>
+	
+	<ITEM_RING_SKILLGAIN>
+		<name>Artisan Ring</name>
+		<typeId>126</typeId>
+		<icon>163</icon>
+		<description>Skillgain bonus.</description>		
+	</ITEM_RING_SKILLGAIN>
+	
+	<ITEM_RING_SWIMMING>
+		<name>Seal Ring</name>
+		<typeId>127</typeId>
+		<icon>163</icon>
+		<description>Drown damage reduction.</description>		
+	</ITEM_RING_SWIMMING>
+	
+	<ITEM_RING_STEALTH>
+		<name>Stealth Ring</name>
+		<typeId>128</typeId>
+		<icon>163</icon>
+		<description>Stealth bonus.</description>		
+	</ITEM_RING_STEALTH>
+	
+	<ITEM_RING_DETECTION>
+		<name>Ring of the Eye</name>
+		<typeId>129</typeId>
+		<icon>163</icon>
+		<description>Stealth detection bonus.</description>		
+	</ITEM_RING_DETECTION>
+	
+	<ITEM_BRACELET_CRUSH>
+		<name>Bracelet</name>
+		<typeId>130</typeId>
+		<icon>163</icon>
+		<description>Bonus to parry while wielding crushing.</description>		
+	</ITEM_BRACELET_CRUSH>
+	
+	<ITEM_BRACELET_TWOHANDED>
+		<name>Bracelet</name>
+		<typeId>131</typeId>
+		<icon>163</icon>
+		<description>Bonus to parry while wielding twohanded.</description>		
+	</ITEM_BRACELET_TWOHANDED>
+	
+	<ITEM_BRACELET_PIERCEDAM>
+		<name>Bracelet</name>
+		<typeId>132</typeId>
+		<icon>163</icon>
+		<description>Bonus to pierce damage.</description>		
+	</ITEM_BRACELET_PIERCEDAM>
+	
+	<ITEM_BRACELET_POLEARMDAM>
+		<name>Bracelet</name>
+		<typeId>133</typeId>
+		<icon>163</icon>
+		<description>Bonus to polearm damage.</description>		
+	</ITEM_BRACELET_POLEARMDAM>
+	
+	<ITEM_BRACELET_ENCHANTDAM>
+		<name>Bracelet</name>
+		<typeId>134</typeId>
+		<icon>163</icon>
+		<description>Bonus to weapon enchantment damage.</description>		
+	</ITEM_BRACELET_ENCHANTDAM>
+	
+	<ITEM_NECKLACE_SKILLEFF>
+		<name>Bracelet</name>
+		<typeId>135</typeId>
+		<icon>163</icon>
+		<description>Skill efficiency bonus.</description>		
+	</ITEM_NECKLACE_SKILLEFF>
+	
+	<ITEM_NECKLACE_SKILLMAX>
+		<name>Bracelet</name>
+		<typeId>136</typeId>
+		<icon>163</icon>
+		<description>Item improvement skill max increase.</description>		
+	</ITEM_NECKLACE_SKILLMAX>
+	
+	<ITEM_NECKLACE_HURTING>
+		<name>Bracelet</name>
+		<typeId>137</typeId>
+		<icon>163</icon>
+		<description>Hurting time reduction.</description>		
+	</ITEM_NECKLACE_HURTING>
+	
+	<ITEM_NECKLACE_FOCUS>
+		<name>Bracelet</name>
+		<typeId>138</typeId>
+		<icon>163</icon>
+		<description>Increased chance to focus.</description>		
+	</ITEM_NECKLACE_FOCUS>
+	
+	<ITEM_NECKLACE_REPLENISH>
+		<name>Bracelet</name>
+		<typeId>139</typeId>
+		<icon>163</icon>
+		<description>Lowered food and drink consumption.</description>		
+	</ITEM_NECKLACE_REPLENISH>
+	
+	<ITEM_NECKLACE_REPLENISH>
+		<name>Exhaustion</name>
+		<typeId>140</typeId>
+		<icon>170</icon>
+		<description>50% stamina regain rate.</description>		
+	</ITEM_NECKLACE_REPLENISH>
+	
+	<ITEM_DEBUFF_CLUMSINESS>
+		<name>Clumsiness</name>
+		<typeId>141</typeId>
+		<icon>170</icon>
+		<description>-4 Combat Rating.</description>		
+	</ITEM_DEBUFF_CLUMSINESS>
+	
+	<ITEM_DEBUFF_VULNERABILITY>
+		<name>Vulnerability</name>
+		<typeId>142</typeId>
+		<icon>170</icon>
+		<description>+10% damage received.</description>		
+	</ITEM_DEBUFF_VULNERABILITY>
+
+	<DEATH_PROTECTION>
+		<name>Resurrection stone</name>
+		<typeId>143</typeId>
+		<icon>132</icon>
+		<description>An ancient symbol may protect your sanity and belongings from the nether world.</description>
+	</DEATH_PROTECTION>
+
+	<SKILL_TIMED_AFFINITY>
+		<name>Timed Affinity</name>
+		<typeId>144</typeId>
+		<icon>225</icon>
+		<description>Timed Affinity.</description>
+	</SKILL_TIMED_AFFINITY>
+
+	<RES_STUNNED>
+		<name>Stun resistance</name>
+		<typeId>145</typeId>
+		<icon>226</icon>
+		<description>You are resistant to being stunned.</description>
+	</RES_STUNNED>
+
+</buff>

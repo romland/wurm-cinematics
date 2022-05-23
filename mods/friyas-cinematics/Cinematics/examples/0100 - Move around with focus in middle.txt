@@ -1,0 +1,24 @@
+#
+# Let's revisit camera focusing and go around in a circle around our previous focus example.
+#
+/scene start
+	/setup
+		tell console "flight"
+
+	# This is the same trick old trick as earlier. Make sure we have a predictable starting point.
+	/camera focus for 0s
+		target +5 +5 -80
+
+	# Spend 20 seconds focusing on a tile 5 southeast of us and a bit below.
+	/camera focus for 20s
+		target +5 +5 -80
+
+	# Move around a point we are focusing on.
+	/camera move for 20s
+		waypoint 10 south 50 up
+		waypoint 15 southeast 50 up
+		waypoint 20 southeast 50 up
+		waypoint 15 east 50 up
+		target 0 east 0 up
+
+/scene end

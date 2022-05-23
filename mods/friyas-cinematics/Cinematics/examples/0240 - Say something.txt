@@ -1,0 +1,28 @@
+#
+# You can say things in local from your script. This can be handy to let people know that you
+# are recording. Or get "actors" to start doing what they are supposed to do in your scene.
+#
+/scene start
+	/setup
+		# This is exactly the same instruction as you would use for the "GM Goto" mod,
+		# except that this will not be picked up by the server as a command and instead
+		# treat it as a normal chat message.
+		tell server "This is take 49152! 3 -- 2 -- 1 ... *clap*"
+
+		# Wait one second before actually starting...
+		wait 1s
+		option hud off
+
+	/camera focus for 10s
+		waypoint -3 +0 +0
+		target +3 +5 +0
+		use easing quad inout
+		use pathing catmull-rom
+		
+	/camera move for 10s
+		waypoint +0 +5 +0
+		target +0 +0 +0
+		use easing quad inout
+		use pathing catmull-rom
+
+/scene end

@@ -1,0 +1,21 @@
+#
+# Instead of running from start to finish, you can run a command in reverse order. See below.
+#
+/scene start "Reversed commands"
+	/setup
+		tell cinematics "This example will run for two minutes, you can stop it at any time..."
+		tell console "timelock 14"
+		tell console "flight"
+
+		# I don't turn off HUD, just in case you did not have a keybind for "stop script" yet.
+		#option hud off
+
+	# This will make this command run in reverse, from end to start.
+	/camera move for 120s reversed
+		waypoint 5 west-northwest 80 down
+		waypoint 10 n 80 u
+		waypoint 10 northeast 80 up
+		waypoint 5 north 60 up
+		target 0 north 0 up
+		
+/scene end

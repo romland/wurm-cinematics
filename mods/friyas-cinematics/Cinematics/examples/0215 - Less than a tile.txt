@@ -1,0 +1,28 @@
+#
+# Tiles are big (~4x4 meters). We may want to move in fractions 
+# of a tile.
+#
+# Let's make it so.
+#
+/scene start "Decimals, decimals, decimals"
+	/setup
+		tell console "timelock 12"
+		tell console "flight"
+		option hud off
+		option benchmarking on
+
+	/camera move for 10s
+		# a tenth of a tile
+		waypoint +0.1 +0.1 +0.0
+
+		# and back
+		target +0.0 +0.0 +0.0
+
+		use easing quad inout
+		use pathing catmull-rom
+
+	# Focus below us
+	/camera focus for 10s
+		target +0.5 +0.5 -20
+
+/scene end

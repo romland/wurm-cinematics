@@ -1,0 +1,26 @@
+#
+# You may have forgotten it, but your scene does not have to have flight enabled. In this case
+# we are not even moving, just using focus. 
+#
+# But, what is an easing? It's an algorithm that controls the speed of, for instance, an animation.
+# This will give a desired effect, whether it be a smooth move, linear move, a bouncing move or
+# what have you. We will go through the available easings in Friya's Cinematics in the next few
+# examples.
+#
+# Do note that the easing algorithms can be applied to rotate, move, focus (and other things not yet 
+# introduced). In our examples here we do however always use 'focus' to easily compare between them.
+#
+# If you do not specify an easing, "quad" is used by default.
+#
+# For information on this easing: http://filterbubbles.com/wurm-unlimited/cinematics/easings.html
+#
+/scene start "Easing example: back"
+
+	/camera focus for 5s
+		waypoint +100 +0 +0
+		target +0 +100 +0
+
+		# Introducing a new thing -- "use"! See above for the juicy bits on this.
+		use easing back
+
+/scene end

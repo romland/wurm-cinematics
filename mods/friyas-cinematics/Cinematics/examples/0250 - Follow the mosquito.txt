@@ -1,0 +1,21 @@
+#
+# Many relative focus waypoints.
+#
+# (I also secretly snuck in benchmarking here! We'll get there...)
+#
+/scene start
+	/setup
+		option benchmarking on
+		option hud off
+
+	/camera focus for 40s
+		waypoint 200 north 250 up
+		waypoint 250 north-northeast 550 up
+		waypoint 3 south 100 up
+		waypoint 1250 northeast 50 down
+		waypoint 1250 east 10350 up
+		waypoint 250 southeast 150 down
+		waypoint 250 west 0 down
+		target 5 southeast 80 down
+
+/scene end

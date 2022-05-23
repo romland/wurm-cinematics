@@ -1,0 +1,116 @@
+#
+# Naturally it's not optimal to design a whole video in Wurm alone, it's far better to 
+# just design separate scenes and then use a video editing program to stich the scenes
+# together... This is here mostly to show that simple things can be done.
+#
+# I don't have the creative spirit when it comes to making videos, and this is the first 
+# time I actually try to synchronize video with music. 
+#
+# That said, here's what I did...
+#
+# 1. I downloaded a free program called Audacity
+# 2. I loaded the example song that comes with Cinematics into Audacity...
+# 3. I zoomed in on the audio waves to get more exact timestamps in the song
+# 4. I manually analyzed the song to see where key moments were and noted them down with /at commands
+#    with a small comment saying what type of sound it was (long, short, etc).
+# 5. I started Wurm, and loaded in my script
+# 6. I started adding moves at each /at
+# 7. ...and hopefully, at some point, I'll be able to consider this example done.
+#
+/scene start "Synchronizing with music"
+	/setup
+		require ability flight
+		require mod "net.bdew.wurm.timelock.TimeLockMod"
+		tell console "flight"
+
+		# I turned on benchmarking to easier be able to see where in the scene I was
+		option benchmarking on
+
+		# Fade to black to hide the teleport
+		option fade on
+
+		# Height on this map around here is 1402
+#		tell server "#goto 1846 1529"
+		tell server "#goto 1205 1677"
+		wait 3s
+		tell console "timelock 12:30"
+		option hud off
+
+		# Play the example song
+		audio play "Tagirijus_-_Ascent.mp3"
+
+		# Fade to show the game again.
+		option fade off
+
+	/at 0ms
+		/camera focus for 0s
+			target -200 +200 +0
+		/world fog for 0ms
+			target 100 
+
+		/world fog for 6800ms
+			target 0
+
+		/camera move for 15000ms
+			target -1 +0 +0
+
+	/at 1800ms
+		# first really audible thing
+		/camera rotate for 600ms
+			target 270 0
+
+	/at 2390ms
+		# quick drum
+		/camera rotate for 60ms
+			waypoint +1 +0 
+			target +0 +0 
+
+	/at 6810ms
+		# quick drum
+		/camera move for 0ms
+			target +0 +0 +0
+
+	/at 11350ms
+		# quick drum
+		/camera move for 0ms
+			target +0 +0 +0
+
+	/at 15200ms
+		# quick drum
+		/camera move for 7000ms
+			target -3 +0 +100
+
+	/at 20200ms
+		# quick drum (then audio fade)
+		/camera focus for 1500ms
+			target +1000 +0 +0
+
+		/camera move for 6400ms
+			target +0 +0 +2400
+
+	/at 22400ms
+		# restart of music
+		/camera focus for 1500ms
+			target -1000 -1000 +0
+
+	/at 22620ms
+		# quick drum
+
+	/at 26810ms
+		# Sweep 1 for 3.2 seconds (to 30 secs)
+
+	/at 31250ms
+		# sweep 2 for 3.2 seconds (to 35.2 seconds)
+
+	/at 35700ms
+		# sweep 3 for 2.5 seconds 
+
+
+	# End sweeps at 48s
+
+
+/scene end
+
+# TODO: do a break to a second scene here (with fade to fog)
+
+

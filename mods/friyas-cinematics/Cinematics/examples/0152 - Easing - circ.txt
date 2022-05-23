@@ -1,0 +1,18 @@
+#
+# Note that the easing algorithms can be applied to rotate, move, focus (and other things not yet 
+# introduced). In our examples here we do however always use 'focus' to easily compare between them.
+#
+# If you do not specify an easing, "quad" is used by default.
+#
+# For information on this easing: http://filterbubbles.com/wurm-unlimited/cinematics/easings.html
+#
+/scene start "Easing example: circ"
+
+	/camera focus for 5s
+		waypoint +100 +0 +0
+		target +0 +100 +0
+
+		# Use the desired easing...
+		use easing circ
+
+/scene end

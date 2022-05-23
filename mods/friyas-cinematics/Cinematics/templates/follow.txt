@@ -1,0 +1,22 @@
+/scene start "$$SCENE_NAME"
+	/setup
+		require ability flight											# Will not start scene if you cannot fly (i.e. you are not GM)
+		require mod "net.bdew.wurm.timelock.TimeLockMod"				# Will not start scene if this mod is not installed
+
+		tell console "timelock 08:30"									# Lock time at 08:30 (Wurm time)
+		tell console "flight"											# Enable 'flight' for this scene
+		$$SETUP_EXTRAS
+#		tell server "This is take 49152! 3 -- 2 -- 1 ... *clap*"		# Simply 'says' this in Local
+#		wait 1s															# Wait for 1 second
+#		option hud off													# Hide heads up display
+
+	# To cover initial (relative) distance in a short span of time
+	/camera follow for 5s
+		target creature $$CREATURE_ID +2 +2 +40
+		use smoothing quad inout
+
+	/camera follow for 6000s 		# 100 minutes
+		target creature $$CREATURE_ID +2 +2 +40
+		use smoothing quad inout
+	
+/scene end

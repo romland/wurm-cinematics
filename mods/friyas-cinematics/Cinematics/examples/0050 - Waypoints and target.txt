@@ -1,0 +1,25 @@
+#
+# Up until now we've only moved to a target location and then the scene was done. What 
+# actually make things a bit more interesting is the ability to set paths to follow.
+#
+# Each command must have a target, that's where the camera will end up when it is done,
+# in the case below, after 15 seconds.
+#
+# So, introducing the waypoint...
+#
+/scene start
+	/setup
+		tell console "flight"
+
+	# Let's say we want to go somewhere, and then return back to where we started.
+	/camera move for 15s
+		# First go three tiles south and 200 height upwards
+		waypoint +0 -3 +200
+
+		# Next we go 3 tiles east and an additional 100 height upwards (to 300)
+		waypoint +3 +0 +300
+
+		# When that is done, we return to where we started -- which is our final destination,
+		# the target.
+		target +0 +0 +0
+/scene end

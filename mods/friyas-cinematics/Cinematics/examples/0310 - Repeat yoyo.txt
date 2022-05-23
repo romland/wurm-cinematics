@@ -1,0 +1,29 @@
+#
+# You can add "repeat" to a command and it will repeat it that number of times.
+#
+# But in this case we repeat with a yoyo effect, so it will go through the 
+# movement from start to end, then from end to start. Instead of a normal repeat
+# that would go from start to end, start to end.
+#
+# If you want to repeat something forever, you set it to "repeatyoyo -1".
+#
+/scene start "Repeating a command"
+
+	/setup
+		tell console "flight"
+		option hud off
+		option benchmarking on
+
+	/camera focus for 5s
+		waypoint -3 +5 +0
+		target +3 +5 +0
+		use easing quad inout
+		use pathing catmull-rom
+		repeatyoyo 2
+		
+	/camera move for 5s
+		waypoint +0 -2 +0
+		target +0 +0 +0
+		repeatyoyo 2
+
+/scene end

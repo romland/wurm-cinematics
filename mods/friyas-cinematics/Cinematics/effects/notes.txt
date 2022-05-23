@@ -1,0 +1,51 @@
+As found in mappings.txt; these are the textures available for particle effects.
+
+I may add something so that more textures can be added.
+--------------------------------------------------------------------------------
+
+particle.xml = xmls/particle.xml
+
+spray					= structures/Fountains/spray.dds
+
+hellhorseflames			= particles/fire_flames3_2.dds
+uttachaPimage			= particles/uttachaPimage.dds
+uttachaP2image			= particles/uttachaP2.dds
+featherP01image			= particles/featherP01.dds
+bloodSplatter			= particles/blood_splatter.dds
+bloodZombie				= particles/blood_zombie.dds
+insectblood				= particles/insect_blood.dds
+fireballPimage			= particles/fire_ball.dds
+water_P_im1				= particles/water_P_im1.dds
+water_P_im2				= particles/water_P_im2.dds
+sparkle					= particles/sparkle.dds
+magicfire				= particles/magicfire.dds
+stonedust				= particles/dust.dds
+fog						= particles/fog.dds
+wraithparticle01		= particles/wraithP01.dds
+fire					= particles/fire.dds
+sparks					= particles/sparks.dds
+sparkleRec				= particles/sparkleRec.dds
+whaleBlow				= particles/whaleBlow.dds
+ink						= particles/ink.dds
+portalBubble			= particles/PortalBubble.dds
+portalSparks			= particles/PortalSparks.dds
+portalGlow1 			= particles/PortalGlow1.dds
+fogGray					= particles/fogGray.dds
+lightningBall01 		= particles/lightningBall01.dds
+sparksBlue 				= particles/sparks_blue1.dds
+lightningTail 			= particles/lightningTail.dds
+FIREFIRE 				= particles/fireball2_256.dds
+acidBolt 				= particles/AcidBolt.dds
+acidSpark 				= particles/AcidSparkle.dds
+frostbolt 				= particles/frostBolt.dds
+frostflake 				= particles/frostFlake.dds
+SpawnDust 				= particles/SpawnDust.dds
+particle2				= particles/particle2.dds
+snow2 					= particles/snow2.dds
+treasureP				= particles/treasure.dds
+riftParticle 				= particles/rift.dds
+runeEffect				= particles/runeEffect.dds
+bees					= particles/bees.dds
+smoke					= particles/smoke.dds
+wood					= particles/wood.png
+dust02					= particles/dust02.dds

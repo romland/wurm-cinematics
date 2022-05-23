@@ -1,0 +1,17 @@
+#
+# Sometimes you may want to have a fixed focus but flexible movement, easily done...
+#
+/scene start "Free movement with focus"
+	/setup
+		tell console "flight"
+		tell cinematics "Attempt to move around like you normally would..."
+	
+	# Instantly set our focus.
+	/camera focus for 0s
+		target +5 +0 +0
+
+	# Keep focus on that tile for 20 seconds.
+	/camera focus for 20s
+		target +5 +0 +0
+
+/scene end

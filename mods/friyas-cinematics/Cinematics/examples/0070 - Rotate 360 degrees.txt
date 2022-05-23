@@ -1,0 +1,25 @@
+#
+# This extends on the previous example, and introduces a neat trick.
+#
+/scene start "360 degree rotation"
+	/setup
+		tell console "flight"
+
+	# This is a trick you'll find yourself wanting to use pretty often. Basically, when you
+	# want to do something for a number of seconds you set that the move should take that long.
+	# But very often you simply want to set a current starting position, so we do that with 
+	# a command of no duration (0 seconds).
+	/camera rotate for 0s
+		target 0 0
+
+	# The above made sure that our camera is now facing north and center, so we have a predictable
+	# situation to work from.
+	/camera rotate for 14s
+		# The first half of this rotation we spend going to 180 degrees along X...
+		waypoint 180 0
+
+		# ...and the remainder to do a full rotation.
+		target 360 0
+
+		# We do not touch the Y axis (look up or down) at all in this example.
+/scene end
