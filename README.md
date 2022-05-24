@@ -1,4 +1,5 @@
-# Friya's Cinematics
+![There is even a logo](https://raw.githubusercontent.com/romland/wurm-cinematics-site/main/image/logo.png)
+
 A client-side mod for Wurm Unlimited that assist you in making better looking video content.
 
 This is a few years after that fact and I recall there being a site with documentation accompanying this mod,
@@ -19,8 +20,6 @@ I dug up a few clips from 2018 that was taken during development...
 
 
 `Below is the original README file that was distributed with the mod.`
-
-![There is even a logo](https://raw.githubusercontent.com/romland/wurm-cinematics-site/main/image/logo.png)
 
 # Introduction
 
