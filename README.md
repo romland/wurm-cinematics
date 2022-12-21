@@ -12,20 +12,20 @@ Simple to advanced examples on how to use the mod can be found [here](https://gi
 ## Example Clips
 I dug up a few clips from 2018 that was taken during development...
 
-[![Example Video](https://img.youtube.com/vi/a7q-6sedZuQ/0.jpg)](https://www.youtube.com/watch?v=a7q-6sedZuQ "Example Video")
-Click image for Youtube clip.
+[![Example Video](https://img.youtube.com/vi/a7q-6sedZuQ/0.jpg)](https://www.youtube.com/watch?v=a7q-6sedZuQ "Example Video")  
+Click image for Youtube clip.  
 
-[![Example Video](https://img.youtube.com/vi/BVRQpaHasQU/0.jpg)](https://www.youtube.com/watch?v=BVRQpaHasQU "Example Video")
-Click image for Youtube clip.
+[![Example Video](https://img.youtube.com/vi/BVRQpaHasQU/0.jpg)](https://www.youtube.com/watch?v=BVRQpaHasQU "Example Video")  
+Click image for Youtube clip.  
 
-[![Example Video](https://img.youtube.com/vi/ne2sDgJlBbo/0.jpg)](https://www.youtube.com/watch?v=ne2sDgJlBbo "Example Video")
-Click image for Youtube clip.
+[![Example Video](https://img.youtube.com/vi/ne2sDgJlBbo/0.jpg)](https://www.youtube.com/watch?v=ne2sDgJlBbo "Example Video")  
+Click image for Youtube clip.  
 
-[![Example Video](https://img.youtube.com/vi/jrRl3eoWSSc/0.jpg)](https://www.youtube.com/watch?v=jrRl3eoWSSc "Example Video")
-Click image for Youtube clip.
+[![Example Video](https://img.youtube.com/vi/jrRl3eoWSSc/0.jpg)](https://www.youtube.com/watch?v=jrRl3eoWSSc "Example Video")  
+Click image for Youtube clip.  
 
-[![Example Video](https://img.youtube.com/vi/5C4oKmglCbY/0.jpg)](https://www.youtube.com/watch?v=5C4oKmglCbY "Example Video")
-Click image for Youtube clip.
+[![Example Video](https://img.youtube.com/vi/5C4oKmglCbY/0.jpg)](https://www.youtube.com/watch?v=5C4oKmglCbY "Example Video")  
+Click image for Youtube clip.  
 
 `Below is the original README file that was distributed with the mod.`
 
